@@ -522,103 +522,39 @@
               <!-- DIRECT CHAT -->
               <div class="card direct-chat direct-chat-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Direct Chat</h3>
+                  <h3 class="card-title">Mensagens recebidas</h3>
 
-                  <div class="card-tools">
-                    <span title="3 New Messages" class="badge text-bg-primary">
-                      3
-                    </span>
-                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                      <i class="fa-solid fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" title="Contacts" data-lte-toggle="chat-pane">
-                      <i class="fa-solid fa-comments"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-lte-dismiss="card-remove">
-                      <i class="fa-solid fa-times"></i>
-                    </button>
-                  </div>
+
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <!-- Conversations are loaded here -->
                   <div class="direct-chat-messages">
+
                     <!-- Message. Default to the start -->
                     <div class="direct-chat-msg">
                       <div class="direct-chat-infos clearfix">
                         <span class="direct-chat-name float-start">
-                          Alexander Pierce
+                          Nome de quem enviou
                         </span>
                         <span class="direct-chat-timestamp float-end">
-                          23 Jan 2:00 pm
+                          23 de Fevereiro de 2024
                         </span>
                       </div>
                       <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="{{URL('img/admin/user1-128x128.jpg')}}" alt="message user image" />
+                      <img class="direct-chat-img" src="{{URL('img/user.png')}}" alt="message user image" />
                       <!-- /.direct-chat-img -->
                       <div class="direct-chat-text">
-                        Is this template really for free? That's unbelievable!
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
                       </div>
                       <!-- /.direct-chat-text -->
                     </div>
                     <!-- /.direct-chat-msg -->
 
                     <!-- Message to the end -->
-                    <div class="direct-chat-msg end">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-end">
-                          Sarah Bullock
-                        </span>
-                        <span class="direct-chat-timestamp float-start">
-                          23 Jan 2:05 pm
-                        </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="{{URL('img/admin/user3-128x128.jpg')}}" alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        You better believe it!
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
 
-                    <!-- Message. Default to the start -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-start">
-                          Alexander Pierce
-                        </span>
-                        <span class="direct-chat-timestamp float-end">
-                          23 Jan 5:37 pm
-                        </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="{{URL('img/admin/user1-128x128.jpg')}}" alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Working with AdminLTE on a great new app! Wanna join?
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-
-                    <!-- Message to the end -->
-                    <div class="direct-chat-msg end">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-end">
-                          Sarah Bullock
-                        </span>
-                        <span class="direct-chat-timestamp float-start">
-                          23 Jan 6:10 pm
-                        </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="{{URL('img/admin/user3-128x128.jpg')}}" alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">I would love to.</div>
-                      <!-- /.direct-chat-text -->
-                    </div>
                     <!-- /.direct-chat-msg -->
                   </div>
                   <!-- /.direct-chat-messages-->
@@ -745,20 +681,7 @@
                   </div>
                   <!-- /.direct-chat-pane -->
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <form action="#" method="post">
-                    <div class="input-group">
-                      <input type="text" name="message" placeholder="Type Message ..." class="form-control" />
-                      <span class="input-group-append">
-                        <button type="button" class="btn btn-primary">
-                          Send
-                        </button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.card-footer-->
+
               </div>
               <!-- /.direct-chat -->
             </div>
