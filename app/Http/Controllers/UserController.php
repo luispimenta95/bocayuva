@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as Database;
 use App\Models\User;
-use App\Models\Hospede;
 use Illuminate\Database\Eloquent\Collection;
 
 class UserController extends Controller
@@ -15,5 +13,10 @@ class UserController extends Controller
     {
         $usuarios = User::paginate(15);
         return view('admin.pages.lista-usuarios', ['usuarios' => $usuarios]);
+    }
+    public function dashboard()
+    {
+        $dados['users'] = User::count();
+        return view('admin.pages.index', ['dados' => $dados]);
     }
 }
