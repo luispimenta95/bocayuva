@@ -1,47 +1,82 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{asset('img/logo.jpg') }}" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('autenticacao/login.css') }}">
+
+
+    <title>| Bocayuva Tintas | Login |</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-page bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <h3 class="mb-3">Login administrativo </h3>
+                        <div class="bg-white shadow rounded">
+                            <div class="row">
+                                <div class="col-md-7 pe-0">
+                                    <div class="form-left h-100 py-5 px-5">
+                                        @error('error')
+                                        <span>{{ $message }}</span>
+                                        @enderror
+
+                                        <form method="POST" action="{{ route('login') }}">
+                                            @csrf
+                                            <div class="col-12">
+                                                <label>E-mail:<span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Informe o E-mail">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label>Senha<span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Informe a senha">
+                                                </div>
+
+                                            </div>
+
+                                            <!--
+                                            <div class="col-sm-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                                    <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <a href="#" class="float-end text-primary">Forgot Password?</a>
+                                            </div>
+-->
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">Login</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 ps-0 d-none d-md-block">
+                                    <img src="{{URL('img/logo.jpg')}}" alt="Image" width="300" height="250" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</body>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
