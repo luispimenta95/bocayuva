@@ -13,6 +13,10 @@ use App\Http\Controllers\UserController as User;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::middleware('guest')->group(function () {
+    Route::get('primeiro-acesso', [RegisteredUserController::class, 'create'])
+        ->name('primeiro-acesso');
+
+    Route::post('primeiro-acesso', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
