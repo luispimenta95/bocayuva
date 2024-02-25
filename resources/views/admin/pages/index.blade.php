@@ -13,137 +13,16 @@
     <nav class="app-header navbar navbar-expand bg-body">
       <!--begin::Container-->
       <div class="container-fluid">
-        <!--begin::Start Navbar Links-->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
-              <i class="fa-solid fa-bars"></i>
-            </a>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
-        </ul>
-        <!--end::Start Navbar Links-->
+
 
         <!--begin::End Navbar Links-->
         <ul class="navbar-nav ms-auto">
           <!--begin::Navbar Search-->
-          <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-              <i class="fa-solid fa-search"></i>
-            </a>
-          </li>
-          <!--end::Navbar Search-->
 
-          <!--begin::Messages Dropdown Menu-->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-bs-toggle="dropdown" href="#">
-              <i class="fa-regular fa-comments"></i>
-              <span class="navbar-badge badge text-bg-danger">3</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <img src="{{URL('img/admin/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 rounded-circle me-3" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <h3 class="dropdown-item-title">
-                      Brad Diesel
-                      <span class="float-end fs-7 text-danger"><i class="fa-solid fa-star"></i></span>
-                    </h3>
-                    <p class="fs-7">Call me whenever you can...</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="fa-regular fa-clock me-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!--end::Message-->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <img src=" {{URL('img/admin/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 rounded-circle me-3" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <h3 class="dropdown-item-title">
-                      John Pierce
-                      <span class="float-end fs-7 text-secondary">
-                        <i class="fa-solid fa-star"></i>
-                      </span>
-                    </h3>
-                    <p class="fs-7">I got your message bro</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="fa-regular fa-clock me-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!--end::Message-->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!--begin::Message-->
-                <div class="d-flex">
-                  <div class="flex-shrink-0">
-                    <img src="{{URL('img/admin/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 rounded-circle me-3" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <h3 class="dropdown-item-title">
-                      Nora Silvester
-                      <span class="float-end fs-7 text-warning">
-                        <i class="fa-solid fa-star"></i>
-                      </span>
-                    </h3>
-                    <p class="fs-7">The subject goes here</p>
-                    <p class="fs-7 text-secondary">
-                      <i class="fa-regular fa-clock me-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!--end::Message-->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-            </div>
-          </li>
-          <!--end::Messages Dropdown Menu-->
+
 
           <!--begin::Notifications Dropdown Menu-->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-bs-toggle="dropdown" href="#">
-              <i class="fa-regular fa-bell"></i>
-              <span class="navbar-badge badge text-bg-warning">15</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-              <span class="dropdown-item dropdown-header">15 Notifications</span>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fa-solid fa-envelope me-2"></i> 4 new messages
-                <span class="float-end text-secondary fs-7">3 mins</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fa-solid fa-users me-2"></i> 8 friend requests
-                <span class="float-end text-secondary fs-7">12 hours</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fa-solid fa-file me-2"></i> 3 new reports
-                <span class="float-end text-secondary fs-7">2 days</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">
-                See All Notifications
-              </a>
-            </div>
-          </li>
+
           <!--end::Notifications Dropdown Menu-->
 
           <!--begin::User Menu Dropdown-->
@@ -157,7 +36,7 @@
               <!--end::Menu Body-->
               <!--begin::Menu Footer-->
               <li class="user-footer">
-                <a href="/profile" class="btn btn-default btn-flat">Profile</a>
+                <a href="/profile" class="btn btn-default btn-flat">Configurações</a>
                 <form method="post" action="/logout">
                   @csrf
                   <button type="submit" class="btn btn-default btn-flat">Sair</button>
@@ -561,7 +440,7 @@
                 <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"></path>
                 </svg>
-                <a href="<?= url('/lista-reservas'); ?>" class="small-box-footer">
+                <a href="<?= url('/lista'); ?>" class="small-box-footer">
                   Exibir reservas <i class="fa-solid fa-arrow-circle-right"></i>
                 </a>
               </div>
