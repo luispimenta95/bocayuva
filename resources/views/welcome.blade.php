@@ -56,6 +56,18 @@
         <!-- Hero Section - Dashboard Page -->
         <section id="hero" class="hero">
             <img src=" {{URL('img/hero-bg.jpg')}}" alt="" data-aos="fade-in" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <a href="#contact"> <button type="submit" class="bi bi-whatsapp"></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
         </section>
@@ -786,7 +798,7 @@
         <section id="team" class="team">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Team</h2>
+                <h2>Nossos Clie</h2>
                 <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
