@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Home - Append Bootstrap Template</title>
+    <title>Dashboard - Append Bootstrap Template</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -36,7 +36,7 @@
             <!-- Nav Menu -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#hero" class="active">Dashboard</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -53,15 +53,27 @@
     <!-- End Header -->
 
     <main id="main">
-        <!-- Hero Section - Home Page -->
+        <!-- Hero Section - Dashboard Page -->
         <section id="hero" class="hero">
             <img src=" {{URL('img/hero-bg.jpg')}}" alt="" data-aos="fade-in" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <a href="#contact"> <button type="submit" class="bi bi-whatsapp"></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
         </section>
         <!-- End Hero Section -->
 
-        <!-- Clients Section - Home Page -->
+        <!-- Clients Section - Dashboard Page -->
         <section id="clients" class="clients">
             <div class="container-fluid" data-aos="fade-up">
                 <div class="row gy-4">
@@ -99,7 +111,7 @@
         </section>
         <!-- End Clients Section -->
 
-        <!-- About Section - Home Page -->
+        <!-- About Section - Dashboard Page -->
         <section id="about" class="about">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-xl-center gy-5">
@@ -171,7 +183,7 @@
         </section>
         <!-- End About Section -->
 
-        <!-- Stats Section - Home Page -->
+        <!-- Stats Section - Dashboard Page -->
         <section id="stats" class="stats">
             <img src="{{URL('img/stats-bg.jpg')}}" alt="" data-aos="fade-in" />
 
@@ -213,7 +225,7 @@
         </section>
         <!-- End Stats Section -->
 
-        <!-- Services Section - Home Page -->
+        <!-- Services Section - Dashboard Page -->
         <section id="services" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -339,7 +351,7 @@
         </section>
         <!-- End Services Section -->
 
-        <!-- Features Section - Home Page -->
+        <!-- Features Section - Dashboard Page -->
         <section id="features" class="features">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -408,7 +420,7 @@
         </section>
         <!-- End Features Section -->
 
-        <!-- Portfolio Section - Home Page -->
+        <!-- Portfolio Section - Dashboard Page -->
         <section id="portfolio" class="portfolio">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -534,7 +546,7 @@
         </section>
         <!-- End Portfolio Section -->
 
-        <!-- Pricing Section - Home Page -->
+        <!-- Pricing Section - Dashboard Page -->
         <section id="pricing" class="pricing">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -661,7 +673,7 @@
         </section>
         <!-- End Pricing Section -->
 
-        <!-- Faq Section - Home Page -->
+        <!-- Faq Section - Dashboard Page -->
         <section id="faq" class="faq">
             <div class="container">
                 <div class="row gy-4">
@@ -782,11 +794,11 @@
         </section>
         <!-- End Faq Section -->
 
-        <!-- Team Section - Home Page -->
+        <!-- Team Section - Dashboard Page -->
         <section id="team" class="team">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Team</h2>
+                <h2>Nossos Clie</h2>
                 <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
@@ -926,13 +938,13 @@
         </section>
         <!-- End Team Section -->
 
-        <!-- Call-to-action Section - Home Page -->
+        <!-- Call-to-action Section - Dashboard Page -->
 
         <!-- End Call-to-action Section -->
 
 
 
-        <!-- Contact Section - Home Page -->
+        <!-- Contact Section - Dashboard Page -->
         <section id="contact" class="contact">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
