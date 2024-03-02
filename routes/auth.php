@@ -10,7 +10,11 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController as User;
+use App\Http\Controllers\AdminController as Admin;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ReformaController as Reforma;
+
+
 
 Route::middleware('guest')->group(function () {
     Route::get('primeiro-acesso', [RegisteredUserController::class, 'create'])
@@ -58,8 +62,11 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 
-    Route::get('/lista', [User::class, 'show']);
-    Route::get('/dashboard', [User::class, 'dashboard']);
+    Route::get('/lista-usuarios', [User::class, 'show']);
+    Route::get('/dashboard', [Admin::class, 'index']);
+    Route::get('/lista-reformas', [Reforma::class, 'index']);
 
-    Route::post('register', [RegisteredUserController::class, 'store'])->name('register');
+
+    Route::post('salvar-usuario', [RegisteredUserController::class, 'store'])->name('salvar-usuario');
+    Route::post('salvar-reforma', [Reforma::class, 'salvarReforma'])->name('salvar-reforma');
 });

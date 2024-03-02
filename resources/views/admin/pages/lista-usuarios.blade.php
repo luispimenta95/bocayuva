@@ -46,9 +46,9 @@
                 </tbody>
             </table>
             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
-                Cadastrar Novo Usuário
+                Cadastrar novo usuário
             </button>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('salvar-usuario') }}">
                 @csrf
                 <!-- The Modal -->
                 <div class="modal" id="myModal">
