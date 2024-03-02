@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reforma;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ReformaController extends Controller
@@ -37,5 +38,28 @@ class ReformaController extends Controller
             $reforma->save();
         }
         return redirect("/dashboard");
+    }
+    public function atualizarReforma(Request $request): void
+    {
+        $reforma = Reforma::findOrFail($request->id);
+
+        if (!isset($request->status)) {
+            $path = \public_path("img/reformas/");
+            $file = $request->file("imagem");
+
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            $file->move($path, $imageName);
+
+            $reforma->update([
+                "propietario" => $request->propietario,
+                'data_reforma' => $request->dataReforma,
+                'descricao' => $request->descricao,
+                "imagem" => $imageName,
+            ]);
+        } else {
+            $reforma->update([
+                "status" => $request->status
+            ]);
+        }
     }
 }

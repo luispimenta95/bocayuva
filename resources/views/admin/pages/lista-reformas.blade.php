@@ -1,8 +1,31 @@
 <!doctype html>
 <html lang="en">
 
-@include('admin.header')
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AdminLTE v4 | Dashboard</title>
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="AdminLTE v4 | Dashboard" />
+    <meta name="author" content="ColorlibHQ" />
+    <meta name="description" content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS." />
+    <meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!--end::Primary Meta Tags-->
 
+    <meta name=" viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!--end::Fonts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+
+    <link href="{{ asset('css/admin/adminlte.css') }}" rel="stylesheet">
+    <!--end::Required Plugin(AdminLTE)-->
+</head>
 
 <body class="bg-light">
 
@@ -24,6 +47,7 @@
                     <tr>
                         <th class="col">#</th>
 
+                        <th class="col">Status</th>
 
                         <th class="col">Ações</th>
                     </tr>
@@ -32,6 +56,17 @@
                     @foreach ($reformas as $reforma)
                     <tr>
                         <td>{{ $reforma->id }}</td>
+                        <?php
+                        $status = "";
+                        if ($reforma->status == 1) {
+                            $status = "class ='glyphicon glyphicon-eye-open'";
+                        } else {
+                            $status = "class ='glyphicon glyphicon-eye-close'";
+                        }
+
+
+                        ?>
+                        <td class="status"> <a onclick="alteraStatus({{ $reforma->id }},{{ $reforma->status }})"><span <?php echo $status ?>></span></a></td>
 
                         <td>
                             <a href="$" class="btn btn-warning btn-sm">Edit</a>
@@ -96,6 +131,8 @@
 
         </div>
         </main>
+        <script src="{{ asset('js/reformas/script.js') }}" defer></script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 

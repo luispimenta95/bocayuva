@@ -69,4 +69,5 @@ Route::middleware('auth')->group(function () {
 
     Route::post('salvar-usuario', [RegisteredUserController::class, 'store'])->name('salvar-usuario');
     Route::post('salvar-reforma', [Reforma::class, 'salvarReforma'])->name('salvar-reforma');
+    Route::post('atualizar-reforma', [Reforma::class, 'atualizarReforma'])->name('atualizar-reforma');
 });
