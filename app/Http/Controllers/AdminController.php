@@ -17,4 +17,10 @@ class AdminController extends Controller
         $dados['reformas'] = Reforma::count();
         return view('admin.pages.index', ['dados' => $dados]);
     }
+
+    public function indexUser()
+    {
+        $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->get();
+        return view('welcome', ['dados' => $dados]);
+    }
 }

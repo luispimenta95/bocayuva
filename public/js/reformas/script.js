@@ -39,3 +39,6 @@ function atualizaReforma(id) {
         },
     });
 }
+$("#btnImg").click(function () {
+    $("#imgReforma").fadeIn(200);
+});
