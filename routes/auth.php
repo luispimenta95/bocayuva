@@ -14,6 +14,7 @@ use App\Http\Controllers\AdminController as Admin;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ReformaController as Reforma;
 use App\Http\Controllers\CategoriaController as Categoria;
+use App\Http\Controllers\ProdutoController as Produto;
 
 
 
@@ -83,6 +84,14 @@ Route::middleware('auth')->group(function () {
     Route::post('get-categoria/{id}', [Categoria::class, 'getcategoria'])->name('get-categoria');
 
     //fim categorias
+
+    //produtos
+    Route::get('/lista-produtos', [Produto::class, 'index']);
+    Route::post('salvar-produto', [Produto::class, 'salvarProduto'])->name('salvar-produto');
+    Route::post('atualizar-produto', [Produto::class, 'atualizarProduto'])->name('atualizar-produto');
+    Route::post('get-produto/{id}', [Produto::class, 'getProduto'])->name('get-produto');
+
+    //fim produtos
 
 
 
