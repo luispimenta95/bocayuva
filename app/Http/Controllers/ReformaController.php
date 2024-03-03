@@ -35,7 +35,7 @@ class ReformaController extends Controller
                 'data_reforma' => $request->dataReforma,
                 'descricao' => $request->descricao,
                 "imagem" => $imageName,
-                'motivo_atualizacao' => CADASTRO_DADOS_REFORMA,
+                'motivo_atualizacao' => CADASTRO_DADOS,
                 'responsavel_atualizacao' => Auth::user()->name
 
             ]);

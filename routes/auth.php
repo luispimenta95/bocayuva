@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController as User;
 use App\Http\Controllers\AdminController as Admin;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ReformaController as Reforma;
+use App\Http\Controllers\CategoriaController as Categoria;
 
 
 
@@ -61,14 +62,29 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
-
-    Route::get('/lista-usuarios', [User::class, 'show']);
+    //adm
     Route::get('/dashboard', [Admin::class, 'index']);
-    Route::get('/lista-reformas', [Reforma::class, 'index']);
 
-
+    //fim adm 
+    //usuarios
+    Route::get('/lista-usuarios', [User::class, 'show']);
     Route::post('salvar-usuario', [RegisteredUserController::class, 'store'])->name('salvar-usuario');
+    //fim usuarios
+    //reforma
+    Route::get('/lista-reformas', [Reforma::class, 'index']);
     Route::post('salvar-reforma', [Reforma::class, 'salvarReforma'])->name('salvar-reforma');
     Route::post('atualizar-reforma', [Reforma::class, 'atualizarReforma'])->name('atualizar-reforma');
     Route::post('get-reforma/{id}', [Reforma::class, 'getReforma'])->name('get-reforma');
+    //fim reforma
+    //categorias
+    Route::get('/lista-categorias', [Categoria::class, 'index']);
+    Route::post('salvar-categoria', [Categoria::class, 'salvarCategoria'])->name('salvar-categoria');
+    Route::post('atualizar-categoria', [Categoria::class, 'atualizarCategoria'])->name('atualizar-categoria');
+    Route::post('get-categoria/{id}', [Categoria::class, 'getcategoria'])->name('get-categoria');
+
+    //fim categorias
+
+
+
+
 });
