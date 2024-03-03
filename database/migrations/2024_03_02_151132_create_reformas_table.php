@@ -20,6 +20,8 @@ return new class extends Migration
             $table->boolean('status')->default(1);
             $table->timestamp('data_criacao')->useCurrent();
             $table->timestamp('ultima_atualizacao')->nullable();
+            $table->string('responsavel_atualizacao');
+            $table->string('motivo_atualizacao');
         });
     }
 

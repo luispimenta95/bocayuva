@@ -67,25 +67,69 @@
 
                         ?>
                         <td class="status"> <a onclick="alteraStatus({{ $reforma->id }},{{ $reforma->status }})"><span <?php echo $status ?>></span></a></td>
+                        <td> <a onclick="atualizaReforma({{ $reforma->id }})"><button>Edit</button></a></td>
 
-                        <td>
-                            <a href="$" class="btn btn-warning btn-sm">Edit</a>
-                            <a href='' class="btn btn-danger btn-sm">Del</a>
+                        <form method="POST" action="{{ route('atualizar-reforma') }}" enctype="multipart/form-data">
+                            @csrf
+                            <!-- The Modal -->
+                            <div class="modal" id="edicao">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Edição de reformas</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="id_reforma" id="id_reforma" value="">
+                                                    <label for="update_propietario">Propietário</label>
+                                                    <input type="text" class="form-control" id="update_propietario" name="update_propietario">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update_dataReforma">Data reforma</label>
+                                                    <input type="date" class="form-control" id="update_dataReforma" name="update_dataReforma">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="update_descricao">Descrição da reforma</label>
+                                                    <textarea class="form-control" id="update_descricao" name="update_descricao" rows="3"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update_imagem">Imagem</label>
+                                                    <input type="file" class="form-control" id="update_imagem" name="update_imagem">
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Salvar</button>
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
 
 
-                        </td>
                         @endforeach
                     </tr>
                     {{ $reformas->links()}}
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">
                 Cadastrar nova reforma
             </button>
             <form method="POST" action="{{ route('salvar-reforma') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- The Modal -->
-                <div class="modal" id="myModal">
+                <div class="modal" id="cadastro">
                     <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -128,6 +172,8 @@
                         </div>
                     </div>
             </form>
+
+
 
         </div>
         </main>

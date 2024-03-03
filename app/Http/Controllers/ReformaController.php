@@ -6,6 +6,7 @@ use App\Models\Reforma;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReformaController extends Controller
 {
@@ -34,32 +35,59 @@ class ReformaController extends Controller
                 'data_reforma' => $request->dataReforma,
                 'descricao' => $request->descricao,
                 "imagem" => $imageName,
+                'motivo_atualizacao' => CADASTRO_DADOS_REFORMA,
+                'responsavel_atualizacao' => Auth::user()->name
+
             ]);
             $reforma->save();
         }
         return redirect("/dashboard");
     }
-    public function atualizarReforma(Request $request): void
+    public function atualizarReforma(Request $request)
     {
-        $reforma = Reforma::findOrFail($request->id);
+        $reforma = Reforma::findOrFail($request->id_reforma);
 
         if (!isset($request->status)) {
-            $path = \public_path("img/reformas/");
-            $file = $request->file("imagem");
+            if ($request->hasFile("update_imagem")) {
+                $path = \public_path("img/reformas/");
 
-            $imageName = time() . '_' . $file->getClientOriginalName();
-            $file->move($path, $imageName);
+                $file = $request->file("update_imagem");
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $file->move($path, $imageName);
+                $reforma->update([
+                    "imagem" => $imageName,
+                    'motivo_atualizacao' => ATUALIZACAO_IMAGEM
 
+                ]);
+            } else {
+                $reforma->update([
+                    'motivo_atualizacao' => ATUALIZACAO_DADOS_REFORMA
+
+                ]);
+            }
             $reforma->update([
-                "propietario" => $request->propietario,
-                'data_reforma' => $request->dataReforma,
-                'descricao' => $request->descricao,
-                "imagem" => $imageName,
+                "propietario" => $request->update_propietario,
+                'data_reforma' => $request->update_dataReforma,
+                'descricao' => $request->update_descricao,
+                'ultima_atualizacao' => date('Y-m-d H:i:s'),
+                'responsavel_atualizacao' => Auth::user()->name
+
             ]);
+            return redirect("/dashboard");
         } else {
+
             $reforma->update([
-                "status" => $request->status
+                "status" => $request->status,
+                'ultima_atualizacao' => date('Y-m-d H:i:s'),
+                'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
+                'responsavel_atualizacao' => Auth::user()->name
             ]);
         }
+    }
+
+    public function getReforma(Request $request): Reforma
+    {
+        $reforma = Reforma::findOrFail($request->id);
+        return $reforma;
     }
 }
