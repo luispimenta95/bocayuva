@@ -18,11 +18,13 @@ class ProdutoController extends Controller
     public function index()
     {
         $dados['produtos'] = Produto::paginate(15);
+        $dados['categorias'] = Categoria::all();
 
-        return view('admin.pages.lista-produtos', ['produtos' => $dados]);
+        return view('admin.pages.lista-produtos', ['dados' => $dados]);
     }
     public function salvarProduto(Request $request)
     {
+        dd($request);
 
 
         $produto = new Produto([

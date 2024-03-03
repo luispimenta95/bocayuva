@@ -25,7 +25,6 @@
                         <th class="col">#</th>
                         <th class="col">Nome</th>
 
-                        <th class="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,12 +33,7 @@
                         <td>{{ $usuario->id }}</td>
                         <td>{{ $usuario->name }}</td>
 
-                        <td>
-                            <a href="$" class="btn btn-warning btn-sm">Edit</a>
-                            <a href='' class="btn btn-danger btn-sm">Del</a>
 
-
-                        </td>
                         @endforeach
                     </tr>
                     {{ $usuarios->links()}}

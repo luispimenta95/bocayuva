@@ -6,6 +6,7 @@ use App\Models\Reforma;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\Produto;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,7 @@ class AdminController extends Controller
         $dados['users'] = User::count();
         $dados['reformas'] = Reforma::count();
         $dados['categorias'] = Categoria::count();
+        $dados['produtos'] = Produto::count();
 
         return view('admin.pages.index', ['dados' => $dados]);
     }
@@ -25,6 +27,8 @@ class AdminController extends Controller
     {
         $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->get();
         $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
+        $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
+
 
         return view('welcome', ['dados' => $dados]);
     }
