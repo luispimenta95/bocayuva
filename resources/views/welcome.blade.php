@@ -431,18 +431,24 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="isotope-layout" data-default-filter=".filter-app" data-layout="masonry" data-sort="original-order">
+                <div class="isotope-layout" data-default-filter=".<?php echo $dados['categoriaPrincipal'] ?>" data-layout="masonry" data-sort="original-order">
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter=".filter-app" class="filter-active">
-                            Planaltina
-                        </li>
-                        <li data-filter=".filter-product">Arapoangas</li>
-                        <li data-filter=".filter-branding">Formosa</li>
+                        <?php
+                        $classe = 'filtros ';
+                        foreach ($dados['categorias'] as $categoria) {
+                            if ($categoria->nome_categoria == $dados['categoriaPrincipal']) {
+                                $classe .= ' filter-active';
+                            } else {
+                                $classe = 'filtros ';
+                            } ?>
+                            <li data-filter=" <?php echo '.' . $categoria->nome_categoria ?>" class=" <?php echo $classe ?>"><?php echo $categoria->nome_categoria ?></li>
+
+                        <?php } ?>
                     </ul>
                     <!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo $dados['categoriaPrincipal'] ?>">
                             <img src=" {{URL('img/masonry-portfolio/masonry-portfolio-1.jpg')}}" class="img-fluid" alt="" />
                             <div class="portfolio-info">
                                 <h4>App 1</h4>
@@ -475,7 +481,7 @@
                         </div>
                         <!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo $dados['categoriaPrincipal'] ?>">
                             <img src="{{URL('img/masonry-portfolio/masonry-portfolio-4.jpg')}}" class="img-fluid" alt="" />
                             <div class="portfolio-info">
                                 <h4>App 2</h4>
@@ -508,7 +514,7 @@
                         </div>
                         <!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo $dados['categoriaPrincipal'] ?>">
                             <img src="{{URL('img/masonry-portfolio/masonry-portfolio-8.jpg')}}" class="img-fluid" alt="" />
                             <div class="portfolio-info">
                                 <h4>App 3</h4>

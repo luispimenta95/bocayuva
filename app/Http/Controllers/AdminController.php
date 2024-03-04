@@ -27,10 +27,9 @@ class AdminController extends Controller
     public function indexUser()
     {
         $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->get();
-        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->orderBy('nome_categoria', 'desc')->get();
+        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
         $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
         $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
-        dd($dados);
 
         return view('welcome', ['dados' => $dados]);
     }
