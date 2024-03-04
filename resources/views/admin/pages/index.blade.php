@@ -469,7 +469,7 @@
               <!--begin::Small Box Widget 3-->
               <div class="small-box text-bg-warning">
                 <div class="inner">
-                  <h3><?php echo $dados['categorias'] ?></h3>
+                  <h3><?php echo $dados['countCategorias'] ?></h3>
 
                   <p>Categorias</p>
                 </div>

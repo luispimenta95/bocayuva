@@ -24,11 +24,23 @@ class ProdutoController extends Controller
     }
     public function salvarProduto(Request $request)
     {
-        dd($request);
+        $imagem = null;
+        if ($request->hasFile("imagem")) {
+            $path = \public_path("img/produtos/");
+            $file = $request->file("imagem");
+            if (!is_dir($path)) {
+                mkdir($path, 0777, true);
+            }
+            $imagem = time() . '_' . $file->getClientOriginalName();
+            $file->move($path, $imagem);
+        }
 
 
         $produto = new Produto([
             "nome_produto" => $request->nomeProduto,
+            "descricao" => $request->descricao,
+            "valor" => $request->valorProduto,
+            "imagem_produto" => $imagem,
             'motivo_atualizacao' => CADASTRO_DADOS,
             'responsavel_atualizacao' => Auth::user()->name,
             'ultima_atualizacao' => date('Y-m-d H:i:s')
@@ -36,8 +48,9 @@ class ProdutoController extends Controller
 
         ]);
         $produto->save();
+        $produto->categorias()->attach($request->categorias);
 
-        return redirect("/dashboard");
+        return redirect("/lista-produtos");
     }
     public function atualizarProduto(Request $request)
     {

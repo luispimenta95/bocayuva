@@ -45,17 +45,15 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="col">#</th>
-
+                        <th class="col">Nome categoria</th>
                         <th class="col">Status</th>
-
                         <th class="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($categorias as $categoria)
                     <tr>
-                        <td>{{ $categoria->id }}</td>
+                        <td>{{ $categoria->nome_categoria }}</td>
                         <?php
                         $status = "";
                         if ($categoria->status == 1) {
@@ -108,9 +106,8 @@
                     {{ $categorias->links()}}
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">
-                Cadastrar nova categoria
-            </button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastrar categoria</button>
+            <a href="/dashboard"><button type="button" class="btn btn-primary btn-sm">Voltar</button></a>
             <form method="POST" action="{{ route('salvar-categoria') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- The Modal -->

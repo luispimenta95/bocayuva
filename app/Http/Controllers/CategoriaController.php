@@ -34,7 +34,7 @@ class CategoriaController extends Controller
         ]);
         $categoria->save();
 
-        return redirect("/dashboard");
+        return redirect("/lista-categorias");
     }
     public function atualizarCategoria(Request $request)
     {

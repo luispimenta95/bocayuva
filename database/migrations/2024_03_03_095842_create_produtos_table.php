@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome_produto')->unique();
+            $table->string('descricao');
             $table->boolean('status')->default(1);
-            $table->string('img_produto');
+            $table->string('imagem_produto');
+            $table->float('valor', 8, 2);
             $table->timestamp('data_criacao')->useCurrent();
             $table->timestamp('ultima_atualizacao')->nullable();
             $table->string('responsavel_atualizacao');
@@ -25,8 +27,8 @@ return new class extends Migration
 
         Schema::create('categoria_produto', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_categoria')->constrained('categorias');
-            $table->foreignId('id_produto')->constrained('produtos');
+            $table->foreignId('categoria_id')->constrained('categorias');
+            $table->foreignId('produto_id')->constrained('produtos');
         });
     }
 

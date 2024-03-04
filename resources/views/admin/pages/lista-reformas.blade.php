@@ -123,9 +123,8 @@
                     {{ $reformas->links()}}
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">
-                Cadastrar nova reforma
-            </button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastrar reforma</button>
+            <a href="/dashboard"><button type="button" class="btn btn-primary btn-sm">Voltar</button></a>
             <form method="POST" action="{{ route('salvar-reforma') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- The Modal -->

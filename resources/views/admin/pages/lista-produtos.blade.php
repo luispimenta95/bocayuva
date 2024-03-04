@@ -87,8 +87,8 @@
                                             <div class="container">
                                                 <div class="form-group">
                                                     <input type="hidden" name="id_produto" id="id_produto" value="">
-                                                    <label for="update_produto">Nome produto</label>
-                                                    <input type="text" class="form-control" id="update_produto" name="update_produto">
+                                                    <label for="produto">Nome produto</label>
+                                                    <input type="text" class="form-control" id="produto" name="produto">
                                                 </div>
                                             </div>
                                             <!-- Modal footer -->
@@ -108,9 +108,8 @@
                     {{ $dados['produtos']->links()}}
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">
-                Cadastrar novo produto
-            </button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastrar produto</button>
+            <a href="/dashboard"><button type="button" class="btn btn-primary btn-sm">Voltar</button></a>
             <form method="POST" action="{{ route('salvar-produto') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- The Modal -->
@@ -132,7 +131,15 @@
                                         <input type="text" class="form-control" id="nomeProduto" name="nomeProduto">
                                     </div>
                                     <div class="form-group">
-                                        <label for="categorias">Example multiple select</label>
+                                        <label for="descricao">Descrição do produto</label>
+                                        <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="valorProduto">Valor do produto</label>
+                                        <input type="number" step="any" class="form-control" id="valorProduto" name="valorProduto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="categorias">Categorias do produto</label>
                                         <select multiple class="form-control" id="categorias" name="categorias[]">
                                             @foreach($dados['categorias'] as $categoria)
 
@@ -147,6 +154,11 @@
 
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="update_imagem">Imagem</label>
+                                        <input type="file" class="form-control" id="imagem" name="imagem">
+                                    </div>
+
 
                                 </div>
 

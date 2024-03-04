@@ -17,8 +17,9 @@ class AdminController extends Controller
     {
         $dados['users'] = User::count();
         $dados['reformas'] = Reforma::count();
-        $dados['categorias'] = Categoria::count();
+        $dados['countCategorias'] = Categoria::count();
         $dados['produtos'] = Produto::count();
+        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->orderBy('nome_categoria', 'asc')->get();
 
         return view('admin.pages.index', ['dados' => $dados]);
     }
@@ -26,9 +27,10 @@ class AdminController extends Controller
     public function indexUser()
     {
         $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->get();
-        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
+        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->orderBy('nome_categoria', 'desc')->get();
         $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
-
+        $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
+        dd($dados);
 
         return view('welcome', ['dados' => $dados]);
     }

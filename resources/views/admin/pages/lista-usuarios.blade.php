@@ -39,9 +39,7 @@
                     {{ $usuarios->links()}}
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
-                Cadastrar novo usuário
-            </button>
+            <a href="/dashboard"><button type="button" class="btn btn-primary btn-sm">Voltar</button></a>
             <form method="POST" action="{{ route('salvar-usuario') }}">
                 @csrf
                 <!-- The Modal -->
