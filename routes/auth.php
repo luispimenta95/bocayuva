@@ -26,6 +26,7 @@ Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
+    Route::post('get-produtos-categoria/{id}', [Produto::class, 'getProdutosCategoria'])->name('get-produtos-categoria');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
@@ -90,7 +91,6 @@ Route::middleware('auth')->group(function () {
     Route::post('salvar-produto', [Produto::class, 'salvarProduto'])->name('salvar-produto');
     Route::post('atualizar-produto', [Produto::class, 'atualizarProduto'])->name('atualizar-produto');
     Route::post('get-produto/{id}', [Produto::class, 'getProduto'])->name('get-produto');
-    Route::post('get-produtos-categoria/{id}', [Produto::class, 'getProdutosCategoria'])->name('get-produtos-categoria');
 
     //fim produtos
 

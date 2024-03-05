@@ -83,10 +83,16 @@ class ProdutoController extends Controller
     }
     public function getProdutosCategoria($id)
     {
-        $produtos = Produto::has('categorias')->where('id', $id)->get();
+
+        $categoria = Categoria::find($id);
+        $produtos = [];
+        foreach ($categoria->produtos as $produto) {
+            $produtos[] = $produto;
+        }
 
         return response()->json([
-            'produtos' => $produtos
+            'produtos' => $produtos,
+            'categoria' => $categoria->nome_categoria,
         ], 200);
     }
 }

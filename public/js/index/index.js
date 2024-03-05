@@ -1,5 +1,10 @@
-function clickCircle(data) {
-    var id = data.id;
+window.onload = function () {
+    var dados = [];
+    dados["id"] = 1;
+    clickCircle(dados);
+};
+function clickCircle(dados) {
+    var id = dados.id;
 
     $.ajax({
         url: "/get-produtos-categoria/" + id,
@@ -11,23 +16,21 @@ function clickCircle(data) {
             id: id,
         },
         success: function (response) {
-            console.log(response.produtos);
-            $.each(response.produtos, function (index, value) {
-                $(".isotope-container").append(
-                    '<input type="checkbox" value="' +
-                        value.nome_produto +
-                        '" name="days[]"  > ' +
-                        value.nome_produto +
-                        "<br/>"
-                );
-
-                console.log(
-                    "My array has at position " +
-                        index +
-                        ", this value: " +
-                        value.nome_produto
-                );
+            var posts = "";
+            classe = "col-lg-4 col-md-6 portfolio-item";
+            filtro = "isotope-item filter-" + response.categoria;
+            classe += " " + filtro;
+            response.produtos.forEach((item) => {
+                posts +=
+                    "<div class='" +
+                    classe +
+                    "'>" +
+                    item.nome_produto +
+                    "</div>";
             });
+            classe = "col-lg-4 col-md-6 portfolio-item";
+
+            $("#produtos").html(posts);
         },
     });
 }
