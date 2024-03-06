@@ -43,6 +43,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#instagram">Nosso Instagram</a></li>
 
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -735,6 +736,36 @@
                                     <?php echo $reforma->descricao ?>
                                 </p>
                             </div>
+                        </div>
+                    <?php } ?>
+                    <!-- End Team Member -->
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram" class="team">
+            <!--  Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Nossas postagens</h2>
+                <p>
+                    Acompanhe nosso Instagram
+                </p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container">
+                <div class="row gy-5">
+
+                    <?php foreach ($dados['posts'] as $post) { ?>
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img id="imgReforma" src="/img/posts/{{ $post->imagem }}" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href="<?php echo $post->link ?>" target="_blank" id="btnImg"><i class="bi bi-card-image"></i></a>
+
+                                </div>
+                            </div>
+
                         </div>
                     <?php } ?>
                     <!-- End Team Member -->

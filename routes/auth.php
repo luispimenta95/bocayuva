@@ -15,6 +15,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ReformaController as Reforma;
 use App\Http\Controllers\CategoriaController as Categoria;
 use App\Http\Controllers\ProdutoController as Produto;
+use App\Http\Controllers\PostController as Post;
 
 
 
@@ -93,6 +94,13 @@ Route::middleware('auth')->group(function () {
     Route::post('get-produto/{id}', [Produto::class, 'getProduto'])->name('get-produto');
 
     //fim produtos
+
+    //post
+    Route::get('/lista-posts', [Post::class, 'index']);
+    Route::post('salvar-post', [Post::class, 'salvarPostagem'])->name('salvar-post');
+    Route::post('atualizar-post', [Post::class, 'atualizarPost'])->name('atualizar-post');
+    Route::post('get-post/{id}', [Post::class, 'getPost'])->name('get-post');
+    //fim post
 
 
 

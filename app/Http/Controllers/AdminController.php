@@ -6,6 +6,7 @@ use App\Models\Reforma;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\Post;
 use App\Models\Produto;
 
 class AdminController extends Controller
@@ -30,6 +31,7 @@ class AdminController extends Controller
         $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
         $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
         $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
+        $dados['posts'] = Post::where('status', STATUS_ATIVO)->paginate(6);
 
         return view('welcome', ['dados' => $dados]);
     }

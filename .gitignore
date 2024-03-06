@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 public/img/reformas/*
 public/img/produtos/*
+public/img/posts/*
