@@ -20,16 +20,22 @@ function clickCircle(dados) {
             classe = "col-lg-4 col-md-6 portfolio-item";
             filtro = "isotope-item filter-" + response.categoria;
             classe += " " + filtro;
+
             response.produtos.forEach((item) => {
+                imgPath =
+                    " src='{{URL('img/produtos/" + item.imagem_produto + ")}}'";
+                console.log(imgPath);
                 posts +=
                     "<div class='" +
                     classe +
                     "'>" +
+                    "<img" +
+                    imgPath +
+                    " class=img-fluid />" +
                     item.nome_produto +
                     "</div>";
             });
             classe = "col-lg-4 col-md-6 portfolio-item";
-
             $("#produtos").html(posts);
         },
     });
