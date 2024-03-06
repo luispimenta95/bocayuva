@@ -22,16 +22,14 @@ function clickCircle(dados) {
             classe += " " + filtro;
 
             response.produtos.forEach((item) => {
-                imgPath =
-                    " src='{{URL('img/produtos/" + item.imagem_produto + ")}}'";
-                console.log(imgPath);
+                imgPath = "img/produtos/" + item.imagem_produto + "";
                 posts +=
                     "<div class='" +
                     classe +
                     "'>" +
-                    "<img" +
+                    "<img src='" +
                     imgPath +
-                    " class=img-fluid />" +
+                    "' class ='img-fluid'>" +
                     item.nome_produto +
                     "</div>";
             });
