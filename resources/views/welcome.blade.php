@@ -448,21 +448,8 @@
                     </ul>
                     <!-- End Portfolio Filters -->
 
-                    <div id="produtos" class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                        <!-- End Portfolio Item -->
-
-
-                        <!-- End Portfolio Item -->
-
-                        <!-- End Portfolio Item -->
-
-                        <!-- End Portfolio Item -->
-
-                        <!-- End Portfolio Item -->
-
-
-                        <!-- End Portfolio Item -->
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                        <div id="produtos"></div>
                     </div>
                     <!-- End Portfolio Container -->
                 </div>
@@ -471,7 +458,7 @@
         <!-- End Portfolio Section -->
 
         <!-- Pricing Section - Dashboard Page -->
-        <section id="pricing" class="pricing">
+        <section id=" pricing" class="pricing">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Pricing</h2>
