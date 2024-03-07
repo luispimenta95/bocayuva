@@ -67,7 +67,7 @@
 
                         ?>
                         <td class="status"> <a onclick="alteraStatus({{ $post->id }},{{ $post->status }})"><span <?php echo $status ?>></span></a></td>
-                        <td> <a onclick="atualizaReforma({{ $post->id }})"><button>Edit</button></a></td>
+                        <td> <a onclick="atualizaPost({{ $post->id }})"><button>Edit</button></a></td>
 
                         <form method="POST" action="{{ route('atualizar-post') }}" enctype="multipart/form-data">
                             @csrf
