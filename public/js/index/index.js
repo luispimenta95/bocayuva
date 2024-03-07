@@ -38,11 +38,13 @@ function clickCircle(dados) {
                     "<div class='" +
                     classe +
                     "'>" +
-                    "<img src='" +
-                    imgPath +
-                    "' class ='img-fluid'/>" +
+                    "<div class='text-center'>" +
+                    "<h4>" +
                     item.nome_produto +
+                    "</h4>" +
+                    "</div>" +
                     "</div>";
+
                 $("#produtos").html(posts);
                 classe = "col-lg-4 col-md-6 portfolio-item";
             });
