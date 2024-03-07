@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Recife',
 
     /*
     |--------------------------------------------------------------------------
@@ -185,4 +185,6 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'igClient' => env('IG_CLIENT'),
+    'igSecret' => env('IG_SECRET'),
 ];
