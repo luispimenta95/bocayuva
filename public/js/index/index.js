@@ -31,6 +31,7 @@ function clickCircle(dados) {
             classe = "col-lg-4 col-md-6 portfolio-item";
             filtro = "isotope-item " + response.categoria;
             classe += " " + filtro;
+            $("#produtos").html("");
             response.produtos.forEach((item) => {
                 imgPath = "img/produtos/" + item.imagem_produto + "";
                 posts +=
