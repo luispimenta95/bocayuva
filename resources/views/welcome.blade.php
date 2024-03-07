@@ -8,6 +8,7 @@
     <title>Dashboard - Append Bootstrap Template</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Favicons -->
     <link href="{{ asset('img/favicon.png')}}" rel="icon" />
@@ -27,6 +28,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/main.css')}}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
@@ -41,6 +43,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#instagram">Nosso Instagram</a></li>
 
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -430,115 +433,24 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="isotope-layout" data-default-filter=".filter-app" data-layout="masonry" data-sort="original-order">
+                <div class="isotope-layout" data-default-filter=".<?php echo $dados['categoriaPrincipal'] ?>" data-layout="masonry" data-sort="original-order">
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter=".filter-app" class="filter-active">
-                            Planaltina
-                        </li>
-                        <li data-filter=".filter-product">Arapoangas</li>
-                        <li data-filter=".filter-branding">Formosa</li>
+                        <?php
+                        $classe = 'filtros ';
+                        foreach ($dados['categorias'] as $categoria) {
+                            if ($categoria->nome_categoria == $dados['categoriaPrincipal']) {
+                                $classe .= ' filter-active';
+                            } else {
+                                $classe = 'filtros ';
+                            } ?>
+                            <li id="<?php echo $categoria->id ?>" onclick="clickCircle(this)" data-filter=" <?php echo '.' . $categoria->nome_categoria ?>" class=" <?php echo $classe ?>"><?php echo $categoria->nome_categoria ?></li>
+
+                        <?php } ?>
                     </ul>
                     <!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src=" {{URL('img/masonry-portfolio/masonry-portfolio-1.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-1.jpg')}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src=" {{URL('img/masonry-portfolio/masonry-portfolio-2.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Product 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-2.jpg')}}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-3.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Branding 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-3.jpg')}}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-4.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-4.jpg')}}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-5.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Product 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-5.jpg')}}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-6.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Branding 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-6.jpg')}}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-8.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-8.jpg')}}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-8.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Product 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-8.jpg')}}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{URL('img/masonry-portfolio/masonry-portfolio-9.jpg')}}" class="img-fluid" alt="" />
-                            <div class="portfolio-info">
-                                <h4>Branding 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="{{URL('img/masonry-portfolio/masonry-portfolio-9.jpg')}}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Portfolio Item -->
+                        <div id="produtos"></div>
                     </div>
                     <!-- End Portfolio Container -->
                 </div>
@@ -547,7 +459,7 @@
         <!-- End Portfolio Section -->
 
         <!-- Pricing Section - Dashboard Page -->
-        <section id="pricing" class="pricing">
+        <section id=" pricing" class="pricing">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Pricing</h2>
@@ -798,7 +710,7 @@
         <section id="team" class="team">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Nossos Clie</h2>
+                <h2>Nossos Clientes</h2>
                 <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
@@ -808,130 +720,54 @@
 
             <div class="container">
                 <div class="row gy-5">
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-1.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <p>
-                                Aliquam iure quaerat voluptatem praesentium possimus unde
-                                laudantium vel dolorum distinctio dire flow
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Team Member -->
 
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-2.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                            <p>
-                                Labore ipsam sit consequatur exercitationem rerum laboriosam
-                                laudantium aut quod dolores exercitationem ut
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Team Member -->
+                    <?php foreach ($dados['reformas'] as $reforma) { ?>
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img id="imgReforma" src="/img/reformas/{{ $reforma->imagem }}" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a id="btnImg"><i class="bi bi-card-image"></i></a>
 
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-3.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info text-center">
+                                <h4><?php echo $reforma->propietario ?></h4>
+                                <p>
+                                    <?php echo $reforma->descricao ?>
+                                </p>
                             </div>
                         </div>
-                        <div class="member-info text-center">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                            <p>
-                                Illum minima ea autem doloremque ipsum quidem quas aspernatur
-                                modi ut praesentium vel tque sed facilis at qui
-                            </p>
-                        </div>
-                    </div>
+                    <?php } ?>
                     <!-- End Team Member -->
+                </div>
+            </div>
+        </section>
 
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-4.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                            <p>
-                                Magni voluptatem accusamus assumenda cum nisi aut qui dolorem
-                                voluptate sed et veniam quasi quam consectetur
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Team Member -->
+        <section id="instagram" class="team">
+            <!--  Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Nossas postagens</h2>
+                <p>
+                    Acompanhe nosso Instagram
+                </p>
+            </div>
+            <!-- End Section Title -->
 
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-5.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Brian Doe</h4>
-                            <span>Marketing</span>
-                            <p>
-                                Qui consequuntur quos accusamus magnam quo est molestiae eius
-                                laboriosam sunt doloribus quia impedit laborum velit
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Team Member -->
+            <div class="container">
+                <div class="row gy-5">
 
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-                        <div class="member-img">
-                            <img src="{{URL('img/team/team-6.jpg')}}" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <?php foreach ($dados['posts'] as $post) { ?>
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img id="imgReforma" src="/img/posts/{{ $post->imagem }}" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href="<?php echo $post->link ?>" target="_blank" id="btnImg"><i class="bi bi-card-image"></i></a>
+
+                                </div>
                             </div>
+
                         </div>
-                        <div class="member-info text-center">
-                            <h4>Josepha Palas</h4>
-                            <span>Operation</span>
-                            <p>
-                                Sint sint eveniet explicabo amet consequatur nesciunt error
-                                enim rerum earum et omnis fugit eligendi cupiditate vel
-                            </p>
-                        </div>
-                    </div>
+                    <?php } ?>
                     <!-- End Team Member -->
                 </div>
             </div>
@@ -957,83 +793,51 @@
             <!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row gy-4">
-                    <div class="col-lg-6">
+                <div class="row gy-12">
+                    <div class="col-lg-12">
                         <div class="row gy-4">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="200">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h3>Address</h3>
-                                    <p>A108 Adam Street</p>
-                                    <p>New York, NY 535022</p>
+                                    <h3 class="text-center">Bocayuva Tintas Planaltina</h3>
+                                    <p> <i class="bi bi-house-door-fill"></i> Sof Conjunto D, Lotes 26/28, Setor Norte, Setor de Oficinas</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-geo-alt"></i> Planaltina-DF, 73.340-040</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                    <i class="bi bi-telephone"></i>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55</p>
-                                    <p>+1 6678 254445 41</p>
+                                    <h3 class="text-center">Bocayuva Tintas Arapoangas</h3>
+                                    <p> <i class="bi bi-house-door-fill"></i>Quadra 07, Conjunto D, Lote 01, Loja 01</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-geo-alt"></i> Arapoangas-DF, 73.368-074</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="400">
-                                    <i class="bi bi-envelope"></i>
-                                    <h3>Email Us</h3>
-                                    <p>info@example.com</p>
-                                    <p>contact@example.com</p>
+                                    <h3 class="text-center">Bocayuva Tintas Formosa</h3>
+                                    <p> <i class="bi bi-house-door-fill"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-geo-alt"></i> Formosa-GO, 73.813-120</p>
+                                    <br><br>
+                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="500">
-                                    <i class="bi bi-clock"></i>
-                                    <h3>Open Hours</h3>
-                                    <p>Monday - Friday</p>
-                                    <p>9:00AM - 05:00PM</p>
-                                </div>
-                            </div>
+
                             <!-- End Info Item -->
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                            <div class="row gy-4">
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required />
-                                </div>
 
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required />
-                                </div>
-
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required />
-                                </div>
-
-                                <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                                </div>
-
-                                <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">
-                                        Your message has been sent. Thank you!
-                                    </div>
-
-                                    <button type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- End Contact Form -->
                 </div>
             </div>
         </section>
@@ -1075,6 +879,10 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/reformas/script.js') }}" defer></script>
+    <script src="{{ asset('js/index/index.js') }}" defer></script>
+
+
 </body>
 
 </html>
