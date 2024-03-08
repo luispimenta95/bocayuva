@@ -16,7 +16,7 @@ function clickCircle(dados) {
             id: id,
         },
         success: function (response) {
-            var posts = "";
+            var posts = "<div class='row'>";
             /*
  <div class="col-lg-4 col-md-6 portfolio-item isotope-item Teste">
                             <img src=" {{URL('img/masonry-portfolio/masonry-portfolio-1.jpg')}}" class="img-fluid" alt="" />
@@ -33,21 +33,18 @@ function clickCircle(dados) {
             classe += " " + filtro;
             $("#produtos").html("");
             response.produtos.forEach((item) => {
+                posts += "<div class='col-md-4'>";
                 imgPath = "img/produtos/" + item.imagem_produto + "";
                 posts +=
-                    "<div class='" +
-                    classe +
-                    "'>" +
-                    "<div class='text-center'>" +
-                    "<h4>" +
-                    item.nome_produto +
-                    "</h4>" +
-                    "</div>" +
+                    "<img class='img-fluid' src='" +
+                    imgPath +
+                    "' alt='' />" +
                     "</div>";
 
                 $("#produtos").html(posts);
                 classe = "col-lg-4 col-md-6 portfolio-item";
             });
+            $("#produtos").append("</div>");
         },
     });
 }

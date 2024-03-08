@@ -45,7 +45,8 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="col">#</th>
+                        <th class="col">Nome do produto</th>
+                        <th class="col">Em promoção?</th>
 
                         <th class="col">Status</th>
 
@@ -55,18 +56,26 @@
                 <tbody>
                     @foreach ($dados['produtos'] as $produto)
                     <tr>
-                        <td>{{ $produto->id }}</td>
+                        <td>{{ $produto->nome_produto }}</td>
                         <?php
                         $status = "";
+                        $promocao = "";
                         if ($produto->status == 1) {
                             $status = "class ='glyphicon glyphicon-eye-open'";
                         } else {
                             $status = "class ='glyphicon glyphicon-eye-close'";
                         }
+                        if ($produto->promocao == 1) {
+                            $promocao = "class ='glyphicon glyphicon-ok-circle'";
+                        } else {
+                            $promocao = "class ='glyphicon glyphicon-remove-circle'";
+                        }
 
 
                         ?>
+                        <td class="promocao"> <a onclick="ativaPromocao({{ $produto->id }},{{ $produto->promocao }})"><span <?php echo $promocao ?>></span></a></td>
                         <td class="status"> <a onclick="alteraStatus({{ $produto->id }},{{ $produto->status }})"><span <?php echo $status ?>></span></a></td>
+
                         <td> <a onclick="atualizaProduto({{ $produto->id }})"><button>Edit</button></a></td>
 
                         <form method="POST" action="{{ route('atualizar-produto') }}" enctype="multipart/form-data">
