@@ -55,25 +55,24 @@ class ProdutoController extends Controller
     public function atualizarProduto(Request $request)
     {
         $produto = Produto::findOrFail($request->id_produto);
-
-        if (!isset($request->status)) {
-            $produto->update([
-                "nome_produto" => $request->update_produto,
-                'ultima_atualizacao' => date('Y-m-d H:i:s'),
-                'motivo_atualizacao' => ATUALIZACAO_CATEGORIA,
-                'responsavel_atualizacao' => Auth::user()->name
-
-            ]);
-            return redirect("/lista-produtos");
-        } else {
-
+        if (isset($request->status)) {
             $produto->update([
                 "status" => $request->status,
-                'ultima_atualizacao' => date('Y-m-d H:i:s'),
                 'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
-                'responsavel_atualizacao' => Auth::user()->name
             ]);
         }
+        if (isset($request->promocao)) {
+            $produto->update([
+                "promocao" => $request->promocao,
+                'motivo_atualizacao' => $request->promocao == 1 ? ATIVAR_PROMOCAO : INATIVAR_PROMOCAO,
+            ]);
+        } else {
+        }
+        $produto->update([
+            'ultima_atualizacao' => date('Y-m-d H:i:s'),
+            'responsavel_atualizacao' => Auth::user()->name
+        ]);
+        return redirect("/lista-produtos");
     }
 
     public function getProduto(Request $request): Produto
