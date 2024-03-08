@@ -38,14 +38,14 @@
             <!-- Nav Menu -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Dashboard</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">Quem somos</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#portfolio">Marcas parceiras</a></li>
+                    <li><a href="#team">Nossos clientes</a></li>
                     <li><a href="#instagram">Nosso Instagram</a></li>
 
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
 
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -228,11 +228,11 @@
         </section>
         <!-- End Stats Section -->
 
-        <!-- Services Section - Dashboard Page -->
+        <!-- Serviços Section - Dashboard Page -->
         <section id="services" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Services</h2>
+                <h2>Serviços</h2>
                 <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
@@ -447,15 +447,9 @@
 
                         <?php } ?>
                     </ul>
-                    <!-- End Portfolio Filters -->
 
 
-                    <div id="produtos">
-
-
-
-
-                    </div>
+                    <div id="produtos"> </div>
                     <!-- End Portfolio Container -->
                 </div>
             </div>
@@ -788,7 +782,7 @@
         <section id="contact" class="contact">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Contact</h2>
+                <h2>Entre em contato</h2>
                 <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
