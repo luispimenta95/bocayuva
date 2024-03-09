@@ -54,7 +54,6 @@ class ProdutoController extends Controller
     }
     public function atualizarProduto(Request $request)
     {
-        dd($request->update_categorias);
         $produto = Produto::findOrFail($request->id_produto);
         if ($request->hasFile("update_imagem")) {
             $path = \public_path("img/produtos/");
@@ -92,6 +91,9 @@ class ProdutoController extends Controller
             'ultima_atualizacao' => date('Y-m-d H:i:s'),
             'responsavel_atualizacao' => Auth::user()->name
         ]);
+        if ($request->update_categorias != null) {
+            $produto->categorias()->sync($request->update_categorias);
+        }
         return redirect("/lista-produtos");
     }
 
