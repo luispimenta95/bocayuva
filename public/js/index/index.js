@@ -29,6 +29,10 @@ function clickCircle(dados) {
                     "<img class='img-fluid' src='" +
                     imgPath +
                     "' alt='' />" +
+                    /*"<br>" +
+                    "<p>" +
+                    item.nome_produto +
+                    "</p>" +*/
                     "</div>";
 
                 $("#produtos").html(posts);
