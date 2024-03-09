@@ -105,7 +105,9 @@ class ProdutoController extends Controller
         $categoria = Categoria::find($id);
         $produtos = [];
         foreach ($categoria->produtos as $produto) {
-            $produtos[] = $produto;
+            if ($produto->status == STATUS_ATIVO) {
+                $produtos[] = $produto;
+            }
         }
 
         return response()->json([
