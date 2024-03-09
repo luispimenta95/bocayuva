@@ -60,13 +60,32 @@ class ProdutoController extends Controller
                 "status" => $request->status,
                 'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
             ]);
-        }
-        if (isset($request->promocao)) {
+        } else if (isset($request->promocao)) {
             $produto->update([
                 "promocao" => $request->promocao,
                 'motivo_atualizacao' => $request->promocao == 1 ? ATIVAR_PROMOCAO : INATIVAR_PROMOCAO,
             ]);
         } else {
+            if ($request->hasFile("update_imagem")) {
+                $path = \public_path("img/produtos/");
+                $oldPath = $path . $produto->imagem_produto;
+                $file = $request->file("update_imagem");
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $file->move($path, $imageName);
+                $produto->update([
+                    "nome_produto" => $request->update_produto,
+                    "descricao" => $request->update_descricao,
+                    "valor" => $request->update_valorProduto,
+                    "imagem_produto" => $imageName,
+                    'motivo_atualizacao' => ATUALIZACAO_PRODUTO_IMAGEM
+
+                ]);
+                unlink($oldPath);
+            } else {
+                $produto->update([
+                    'motivo_atualizacao' => ATUALIZACAO_PRODUTO
+                ]);
+            }
         }
         $produto->update([
             'ultima_atualizacao' => date('Y-m-d H:i:s'),

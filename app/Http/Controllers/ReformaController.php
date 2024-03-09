@@ -50,6 +50,7 @@ class ReformaController extends Controller
         if (!isset($request->status)) {
             if ($request->hasFile("update_imagem")) {
                 $path = \public_path("img/reformas/");
+                $oldPath = $path . $reforma->imagem;
 
                 $file = $request->file("update_imagem");
                 $imageName = time() . '_' . $file->getClientOriginalName();
@@ -59,6 +60,7 @@ class ReformaController extends Controller
                     'motivo_atualizacao' => ATUALIZACAO_IMAGEM
 
                 ]);
+                unlink($oldPath);
             } else {
                 $reforma->update([
                     'motivo_atualizacao' => ATUALIZACAO_DADOS_REFORMA

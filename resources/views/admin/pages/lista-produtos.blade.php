@@ -97,8 +97,38 @@
                                                 <div class="form-group">
                                                     <input type="hidden" name="id_produto" id="id_produto" value="">
                                                     <label for="produto">Nome produto</label>
-                                                    <input type="text" class="form-control" id="produto" name="produto">
+                                                    <input type="text" class="form-control" id="update_produto" name="update_produto">
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="update_descricao">Descrição do produto</label>
+                                                    <textarea class="form-control" id="update_descricao" name="update_descricao" rows="3"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update_valorProduto">Valor do produto</label>
+                                                    <input type="number" step="any" class="form-control" id="update_valorProduto" name="update_valorProduto">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update_categorias">Categorias do produto</label>
+                                                    <select multiple class="form-control" id="update_categorias" name="update_categorias[]">
+                                                        @foreach($dados['categorias'] as $categoria)
+
+
+                                                        <option value="{{ $categoria->id }}">
+                                                            {{ $categoria->nome_categoria }}
+                                                        </option>
+
+                                                        @endforeach
+
+
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="update_imagem">Imagem</label>
+                                                    <input type="file" class="form-control" id="update_imagem" name="update_imagem">
+                                                </div>
+
+
                                             </div>
                                             <!-- Modal footer -->
                                             <div class="modal-footer">
