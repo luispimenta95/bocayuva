@@ -35,6 +35,8 @@ function atualizaProduto(id) {
         success: function (data) {
             $("#id_produto").val(data.id);
             $("#update_produto").val(data.nome_produto);
+            $("#update_descricao").val(data.descricao);
+            $("#update_valorProduto").val(data.valor);
             $("#edicao").modal("show");
         },
     });

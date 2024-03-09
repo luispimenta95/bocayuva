@@ -46,6 +46,7 @@
                 <thead>
                     <tr>
                         <th class="col">Nome do produto</th>
+                        <th class="col">Categoria</th>
                         <th class="col">Em promoção?</th>
 
                         <th class="col">Status</th>
@@ -57,6 +58,16 @@
                     @foreach ($dados['produtos'] as $produto)
                     <tr>
                         <td>{{ $produto->nome_produto }}</td>
+                        <td>
+                            @foreach ($produto->categorias as $categoria)
+                            {{ $categoria->nome_categoria }}
+
+                            @if( !$loop->last)
+                            ,
+                            @endif
+                            @endforeach
+                        </td>
+
                         <?php
                         $status = "";
                         $promocao = "";
@@ -111,8 +122,6 @@
                                                     <label for="update_categorias">Categorias do produto</label>
                                                     <select multiple class="form-control" id="update_categorias" name="update_categorias[]">
                                                         @foreach($dados['categorias'] as $categoria)
-
-
                                                         <option value="{{ $categoria->id }}">
                                                             {{ $categoria->nome_categoria }}
                                                         </option>

@@ -54,33 +54,34 @@ class ProdutoController extends Controller
     }
     public function atualizarProduto(Request $request)
     {
+        dd($request->update_categorias);
         $produto = Produto::findOrFail($request->id_produto);
-        if (isset($request->status)) {
+        if ($request->hasFile("update_imagem")) {
+            $path = \public_path("img/produtos/");
+            $oldPath = $path . $produto->imagem_produto;
+            $file = $request->file("update_imagem");
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            $file->move($path, $imageName);
             $produto->update([
-                "status" => $request->status,
-                'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
-            ]);
-        } else if (isset($request->promocao)) {
-            $produto->update([
-                "promocao" => $request->promocao,
-                'motivo_atualizacao' => $request->promocao == 1 ? ATIVAR_PROMOCAO : INATIVAR_PROMOCAO,
-            ]);
-        } else {
-            if ($request->hasFile("update_imagem")) {
-                $path = \public_path("img/produtos/");
-                $oldPath = $path . $produto->imagem_produto;
-                $file = $request->file("update_imagem");
-                $imageName = time() . '_' . $file->getClientOriginalName();
-                $file->move($path, $imageName);
-                $produto->update([
-                    "nome_produto" => $request->update_produto,
-                    "descricao" => $request->update_descricao,
-                    "valor" => $request->update_valorProduto,
-                    "imagem_produto" => $imageName,
-                    'motivo_atualizacao' => ATUALIZACAO_PRODUTO_IMAGEM
+                "nome_produto" => $request->update_produto,
+                "descricao" => $request->update_descricao,
+                "valor" => $request->update_valorProduto,
+                "imagem_produto" => $imageName,
+                'motivo_atualizacao' => ATUALIZACAO_PRODUTO_IMAGEM
 
+            ]);
+            unlink($oldPath);
+        } else {
+            if (isset($request->status)) {
+                $produto->update([
+                    "status" => $request->status,
+                    'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
                 ]);
-                unlink($oldPath);
+            } else if (isset($request->promocao)) {
+                $produto->update([
+                    "promocao" => $request->promocao,
+                    'motivo_atualizacao' => $request->promocao == 1 ? ATIVAR_PROMOCAO : INATIVAR_PROMOCAO,
+                ]);
             } else {
                 $produto->update([
                     'motivo_atualizacao' => ATUALIZACAO_PRODUTO
