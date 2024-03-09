@@ -54,26 +54,45 @@ class ProdutoController extends Controller
     }
     public function atualizarProduto(Request $request)
     {
+        dd($request->update_categorias);
         $produto = Produto::findOrFail($request->id_produto);
-
-        if (!isset($request->status)) {
+        if ($request->hasFile("update_imagem")) {
+            $path = \public_path("img/produtos/");
+            $oldPath = $path . $produto->imagem_produto;
+            $file = $request->file("update_imagem");
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            $file->move($path, $imageName);
             $produto->update([
                 "nome_produto" => $request->update_produto,
-                'ultima_atualizacao' => date('Y-m-d H:i:s'),
-                'motivo_atualizacao' => ATUALIZACAO_CATEGORIA,
-                'responsavel_atualizacao' => Auth::user()->name
+                "descricao" => $request->update_descricao,
+                "valor" => $request->update_valorProduto,
+                "imagem_produto" => $imageName,
+                'motivo_atualizacao' => ATUALIZACAO_PRODUTO_IMAGEM
 
             ]);
-            return redirect("/lista-produtos");
+            unlink($oldPath);
         } else {
-
-            $produto->update([
-                "status" => $request->status,
-                'ultima_atualizacao' => date('Y-m-d H:i:s'),
-                'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
-                'responsavel_atualizacao' => Auth::user()->name
-            ]);
+            if (isset($request->status)) {
+                $produto->update([
+                    "status" => $request->status,
+                    'motivo_atualizacao' => $request->status == 1 ? EXIBIR_HOME : ESCONDER_HOME,
+                ]);
+            } else if (isset($request->promocao)) {
+                $produto->update([
+                    "promocao" => $request->promocao,
+                    'motivo_atualizacao' => $request->promocao == 1 ? ATIVAR_PROMOCAO : INATIVAR_PROMOCAO,
+                ]);
+            } else {
+                $produto->update([
+                    'motivo_atualizacao' => ATUALIZACAO_PRODUTO
+                ]);
+            }
         }
+        $produto->update([
+            'ultima_atualizacao' => date('Y-m-d H:i:s'),
+            'responsavel_atualizacao' => Auth::user()->name
+        ]);
+        return redirect("/lista-produtos");
     }
 
     public function getProduto(Request $request): Produto
@@ -87,7 +106,9 @@ class ProdutoController extends Controller
         $categoria = Categoria::find($id);
         $produtos = [];
         foreach ($categoria->produtos as $produto) {
-            $produtos[] = $produto;
+            if ($produto->status == STATUS_ATIVO) {
+                $produtos[] = $produto;
+            }
         }
 
         return response()->json([
