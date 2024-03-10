@@ -65,11 +65,9 @@
                         <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
                         <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
                     </div>
-                    <div class="col-lg-5">
-                        <a href="#contact"> <button type="submit" class="bi bi-whatsapp"></button>
-                        </a>
-                    </div>
+
                 </div>
+
             </div>
 
 
@@ -503,7 +501,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Planaltina-DF, 73.340-040</p>
                                     <br><br>
-                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -515,7 +513,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Arapoangas-DF, 73.368-074</p>
                                     <br><br>
-                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -527,7 +525,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Formosa-GO, 73.813-120</p>
                                     <br><br>
-                                    <p> <i class="bi bi-telephone"></i> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -558,7 +556,7 @@
     <!-- End Footer -->
 
     <!-- Scroll Top Button -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
 
     <!-- Preloader -->
     <div id="preloader">

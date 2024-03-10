@@ -601,7 +601,7 @@ section {
     right: 15px;
     bottom: 15px;
     z-index: 99999;
-    background-color: var(--accent-color);
+    background-color: #64b161;
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -615,7 +615,7 @@ section {
 }
 
 .scroll-top:hover {
-    background-color: rgba(var(--accent-color-rgb), 0.8);
+    background-color: rgba(100, 197, 77, 0.8);
     color: #ffffff;
 }
 
@@ -2893,4 +2893,8 @@ section,
 .blog-details .comments .reply-form .btn-primary:hover {
     color: var(--contrast-color);
     background-color: rgba(var(--accent-color-rgb), 0.8);
+}
+.btn-wpp {
+    max-width: 40px;
+    height: auto;
 }
