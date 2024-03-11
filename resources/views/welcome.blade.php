@@ -483,10 +483,10 @@
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Entre em contato</h2>
-                <p>
+                <!-- <p>
                     Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                     consectetur velit
-                </p>
+                </p> -->
             </div>
             <!-- End Section Title -->
 
@@ -501,7 +501,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Planaltina-DF, 73.340-040</p>
                                     <br><br>
-                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8137</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -513,7 +513,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Arapoangas-DF, 73.368-074</p>
                                     <br><br>
-                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8138</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -525,7 +525,7 @@
                                     <br><br>
                                     <p> <i class="bi bi-geo-alt"></i> Formosa-GO, 73.813-120</p>
                                     <br><br>
-                                    <p> <a href="https://wa.link/19akvc" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /></a> (61) 99999-0000</p>
+                                    <p> <a href="https://wa.link/ixnqi6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 3631-3355</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
