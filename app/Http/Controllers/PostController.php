@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $dados = Post::paginate(15);
+        $dados = Post::paginate(NUM_PAGINACAO);
 
         return view('admin.pages.lista-postagens', ['posts' => $dados]);
     }
@@ -54,6 +54,7 @@ class PostController extends Controller
                     'motivo_atualizacao' => ATUALIZACAO_POST_IMAGEM
 
                 ]);
+                unlink($path . $post->imagem);
             } else {
                 $post->update([
                     'motivo_atualizacao' => ATUALIZACAO_POST

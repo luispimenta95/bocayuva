@@ -500,228 +500,28 @@
               </div>
               <!--end::Small Box Widget 4-->
             </div>
+
+            <div class="col-lg-3 col-6">
+              <!--begin::Small Box Widget 4-->
+              <div class="small-box text-bg-default">
+                <div class="inner">
+                  <h3><?php echo $dados['posts'] ?></h3>
+
+                  <p>Postagens</p>
+                </div>
+                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
+                </svg>
+                <a href="<?= url('/lista-posts'); ?>" class="small-box-footer">
+                  Exbir postagens <i class="fa-solid fa-arrow-circle-right"></i>
+                </a>
+              </div>
+              <!--end::Small Box Widget 4-->
+            </div>
             <!--end::Col-->
           </div>
           <!--end::Row-->
-          <!--begin::Row-->
-          <div class="row">
-            <!-- Start col -->
-            <div class="col-lg-7 connectedSortable">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Sales Value</h3>
-                </div>
 
-                <div class="card-body">
-                  <div id="revenue-chart"></div>
-                </div>
-              </div>
-              <!-- /.card -->
-
-              <!-- DIRECT CHAT -->
-              <div class="card direct-chat direct-chat-primary">
-                <div class="card-header">
-                  <h3 class="card-title">Mensagens recebidas</h3>
-
-
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <!-- Conversations are loaded here -->
-                  <div class="direct-chat-messages">
-
-                    <!-- Message. Default to the start -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-start">
-                          Nome de quem enviou
-                        </span>
-                        <span class="direct-chat-timestamp float-end">
-                          23 de Fevereiro de 2024
-                        </span>
-                      </div>
-                      <!-- /.direct-chat-infos -->
-                      <img class="direct-chat-img" src="{{URL('img/user.png')}}" alt="message user image" />
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-
-                    <!-- Message to the end -->
-
-                    <!-- /.direct-chat-msg -->
-                  </div>
-                  <!-- /.direct-chat-messages-->
-
-                  <!-- Contacts are loaded here -->
-                  <div class="direct-chat-contacts">
-                    <ul class="contacts-list">
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user1-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Count Dracula
-                              <small class="contacts-list-date float-end">
-                                2/28/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              How have you been? I was...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user7-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Sarah Doe
-                              <small class="contacts-list-date float-end">
-                                2/23/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              I will be waiting for...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user3-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Nadia Jolie
-                              <small class="contacts-list-date float-end">
-                                2/20/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              I'll call you back at...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user5-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Nora S. Vans
-                              <small class="contacts-list-date float-end">
-                                2/10/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              Where is your new...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user6-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              John K.
-                              <small class="contacts-list-date float-end">
-                                1/27/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              Can I take a look at...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="{{URL('img/admin/user8-128x128.jpg')}}" alt="User Avatar" />
-
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Kenneth M.
-                              <small class="contacts-list-date float-end">
-                                1/4/2023
-                              </small>
-                            </span>
-                            <span class="contacts-list-msg">
-                              Never mind I found...
-                            </span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                      <!-- End Contact Item -->
-                    </ul>
-                    <!-- /.contacts-list -->
-                  </div>
-                  <!-- /.direct-chat-pane -->
-                </div>
-
-              </div>
-              <!-- /.direct-chat -->
-            </div>
-            <!-- /.Start col -->
-
-            <!-- Start col -->
-            <div class="col-lg-5 connectedSortable">
-              <div class="card text-white bg-primary bg-gradient border-primary">
-                <div class="card-header border-0">
-                  <h3 class="card-title">Sales Value</h3>
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-primary btn-sm" data-lte-toggle="card-collapse">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div id="world-map" style="height: 220px"></div>
-                </div>
-                <div class="card-footer border-0">
-                  <!--begin::Row-->
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <div id="sparkline-1"></div>
-                      <div class="text-white">Visitors</div>
-                    </div>
-                    <div class="col-4 text-center">
-                      <div id="sparkline-2"></div>
-                      <div class="text-white">Online</div>
-                    </div>
-                    <div class="col-4 text-center">
-                      <div id="sparkline-3"></div>
-                      <div class="text-white">Sales</div>
-                    </div>
-                  </div>
-                  <!--end::Row-->
-                </div>
-              </div>
-            </div>
-            <!-- /.Start col -->
-          </div>
           <!-- /.row (main row) -->
         </div>
         <!--end::Container-->

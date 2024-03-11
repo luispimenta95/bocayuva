@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        $usuarios = User::paginate(15);
+        $usuarios = User::paginate(NUM_PAGINACAO);
         return view('admin.pages.lista-usuarios', ['usuarios' => $usuarios]);
     }
 }

@@ -13,3 +13,5 @@ define('ATUALIZACAO_POST', 'Atualização dos dados textuais do post');
 define('ATUALIZACAO_POST_IMAGEM', 'Atualização dos dados textuais e imagem do post');
 define('ATIVAR_PROMOCAO', 'Ativação do status de promoção do produto');
 define('INATIVAR_PROMOCAO', 'Inativação do status de promoção do produto');
+define('NUM_REGISTROS', 6);
+define('NUM_PAGINACAO', 15);
