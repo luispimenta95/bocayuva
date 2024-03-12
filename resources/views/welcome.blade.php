@@ -497,10 +497,10 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                                     <h3 class="text-center">Bocayuva Tintas Planaltina</h3>
-                                    <p> <i class="bi bi-house-door-fill"></i> Sof Conjunto D, Lotes 26/28, Setor Norte, Setor de Oficinas</p>
-                                    <br><br>
-                                    <p> <i class="bi bi-geo-alt"></i> Planaltina-DF, 73.340-040</p>
-                                    <br><br>
+                                    <br>
+                                    <p> <a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"><i class="bi bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
+
+                                    <br>
                                     <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8137</p></a>
                                 </div>
                             </div>
@@ -509,10 +509,10 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                                     <h3 class="text-center">Bocayuva Tintas Arapoangas</h3>
-                                    <p> <i class="bi bi-house-door-fill"></i>Quadra 07, Conjunto D, Lote 01, Loja 01</p>
-                                    <br><br>
-                                    <p> <i class="bi bi-geo-alt"></i> Arapoangas-DF, 73.368-074</p>
-                                    <br><br>
+                                    <br>
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoangas-DF</p></a>
+
+                                    <br>
                                     <p> <a href="https://wa.link/hs63sq" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8138</p></a>
                                 </div>
                             </div>
@@ -521,10 +521,10 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                                     <h3 class="text-center">Bocayuva Tintas Formosa</h3>
-                                    <p> <i class="bi bi-house-door-fill"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha</p>
-                                    <br><br>
-                                    <p> <i class="bi bi-geo-alt"></i> Formosa-GO, 73.813-120</p>
-                                    <br><br>
+                                    <br>
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha Formosa-GO</p></a>
+
+                                    <br>
                                     <p> <a href="https://wa.link/ixnqi6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 3631-3355</p></a>
                                 </div>
                             </div>
