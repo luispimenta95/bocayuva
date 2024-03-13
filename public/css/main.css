@@ -22,7 +22,7 @@
 
 /* Global Colors */
 :root {
-    --background-color: #d3d3d3;
+    background-image: url("../img/util/fundo-site.jpg");
     --background-color-rgb: 211, 211, 211;
     --default-color: #16065b;
     --default-color-rgb: 22, 6, 91;
@@ -57,7 +57,7 @@
 --------------------------------------------------------------*/
 body {
     color: var(--default-color);
-    background-color: var(--background-color);
+    background-image: url("../img/util/fundo-site.jpg");
     font-family: var(--default-font);
 }
 
@@ -1335,7 +1335,7 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-    color: rgba(var(--default-color-rgb), 0.7);
+    background-image: url("../img/util/fundo-site.jpg");
     font-size: 14px;
     margin-bottom: 0;
     padding-right: 50px;
@@ -1614,7 +1614,7 @@ section,
 /* Team Section - Home Page
 ------------------------------*/
 .team {
-    --background-color: #f4f4f4;
+    background-image: url("../img/util/fundo-site.jpg");
 }
 
 .team .member {
