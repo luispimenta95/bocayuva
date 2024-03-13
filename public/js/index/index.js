@@ -2,6 +2,18 @@ window.onload = function () {
     var dados = [];
     dados["id"] = 1;
     clickCircle(dados);
+    var htmlElement = document.documentElement;
+    var bodyElement = document.body;
+
+    var height = Math.max(
+        htmlElement.clientHeight,
+        htmlElement.scrollHeight,
+        htmlElement.offsetHeight,
+        bodyElement.scrollHeight,
+        bodyElement.offsetHeight
+    );
+
+    //console.log("entire document height: " + height + "px");
 };
 function clickCircle(dados) {
     var id = dados.id;

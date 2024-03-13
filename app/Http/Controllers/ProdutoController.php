@@ -17,7 +17,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $dados['produtos'] = Produto::paginate(15);
+        $dados['produtos'] = Produto::orderBy('nome_produto')->paginate(NUM_PAGINACAO);
         $dados['categorias'] = Categoria::all();
 
         return view('admin.pages.lista-produtos', ['dados' => $dados]);
