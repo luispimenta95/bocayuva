@@ -15,7 +15,7 @@ class ReformaController extends Controller
      */
     public function index()
     {
-        $dados = Reforma::paginate(15);
+        $dados = Reforma::orderBy('nome_propietario')->paginate(NUM_PAGINACAO);
 
         return view('admin.pages.lista-reformas', ['reformas' => $dados]);
     }

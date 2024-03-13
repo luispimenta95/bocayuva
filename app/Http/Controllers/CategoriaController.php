@@ -16,7 +16,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $dados = Categoria::paginate(15);
+        $dados = Categoria::orderBy('nome_categoria')->paginate(NUM_PAGINACAO);
 
         return view('admin.pages.lista-categorias', ['categorias' => $dados]);
     }
