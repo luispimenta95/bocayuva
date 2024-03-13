@@ -498,7 +498,7 @@
                                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                                     <h3 class="text-center">Bocayuva Tintas Planaltina</h3>
                                     <br>
-                                    <p> <a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"><i class="bi bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
+                                    <p> <a href="https://maps.app.goo.gl/7hteyiKajCRLDaYG6?g_st=iw" target="_blank"><i class="bi bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
 
                                     <br>
                                     <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8137</p></a>
@@ -510,7 +510,7 @@
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                                     <h3 class="text-center">Bocayuva Tintas Arapoangas</h3>
                                     <br>
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoangas-DF</p></a>
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoangas-DF</p></a>
 
                                     <br>
                                     <p> <a href="https://wa.link/hs63sq" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8138</p></a>
