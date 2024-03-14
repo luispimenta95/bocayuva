@@ -55,16 +55,19 @@
                     <tr>
                         <td>{{ $categoria->nome_categoria }}</td>
                         <?php
+                        $path = "";
                         $status = "";
                         if ($categoria->status == 1) {
-                            $status = "class ='glyphicon glyphicon-eye-open'";
+                            $path = ICONE_ATIVO;
+                            $status = "title = 'Ativo'";
                         } else {
-                            $status = "class ='glyphicon glyphicon-eye-close'";
+                            $status = "title = 'Inativo'";
+                            $path = ICONE_INATIVO;
                         }
 
 
                         ?>
-                        <td class="status"> <a onclick="alteraStatus({{ $categoria->id }},{{ $categoria->status }})"><span <?php echo $status ?>></span></a></td>
+                        <td class="status"> <a <?php echo $status ?> onclick="alteraStatus({{ $categoria->id }},{{ $categoria->status }})"><img <?php echo $path ?> class="img-fluid" alt="" /></a></td>
                         <td> <a onclick="atualizaCategoria({{ $categoria->id }})"><button>Edit</button></a></td>
 
                         <form method="POST" action="{{ route('atualizar-categoria') }}" enctype="multipart/form-data">

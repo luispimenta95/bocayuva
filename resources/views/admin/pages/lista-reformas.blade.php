@@ -58,15 +58,18 @@
                         <td>{{ $reforma->id }}</td>
                         <?php
                         $status = "";
+                        $path = "";
                         if ($reforma->status == 1) {
-                            $status = "class ='glyphicon glyphicon-eye-open'";
+                            $path = ICONE_ATIVO;
+                            $status = "title = 'Ativo'";
                         } else {
-                            $status = "class ='glyphicon glyphicon-eye-close'";
+                            $status = "title = 'Inativo'";
+                            $path = ICONE_INATIVO;
                         }
 
 
                         ?>
-                        <td class="status"> <a onclick="alteraStatus({{ $reforma->id }},{{ $reforma->status }})"><span <?php echo $status ?>></span></a></td>
+                        <td class="status"> <a <?php echo $status ?> onclick="alteraStatus({{ $reforma->id }},{{ $reforma->status }})"><img <?php echo $path ?> class="img-fluid" alt="" /></a></td>
                         <td> <a onclick="atualizaReforma({{ $reforma->id }})"><button>Edit</button></a></td>
 
                         <form method="POST" action="{{ route('atualizar-reforma') }}" enctype="multipart/form-data">
