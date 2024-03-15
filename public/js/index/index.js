@@ -1,4 +1,5 @@
 window.onload = function () {
+    $("#startModal").modal("show");
     var dados = [];
     dados["id"] = 1;
     clickCircle(dados);
@@ -54,3 +55,6 @@ function clickCircle(dados) {
         },
     });
 }
+$("#btnModal").on("click", function () {
+    $("#startModal").modal("hide");
+});

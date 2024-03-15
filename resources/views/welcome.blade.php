@@ -463,7 +463,7 @@
                                     <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoangas-DF</p></a>
 
                                     <br>
-                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8138</p></a>
+                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img src="/img/util/whatsapp.png" class="btn-wpp" alt="" /> (61) 99942-8138</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -494,19 +494,41 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
+        <div class="modal" id="startModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
 
-        <div class="container copyright text-center mt-4">
-            <p>
-                &copy; <span>Cópia não autorizada</span> <strong class="px-1">Bocayuva Tintas <?php echo date("Y"); ?> - <?php echo date('Y', strtotime("+2 years", strtotime(now()))); ?></strong>
-                <span>Todos os direitos reservados</span>
 
-        </div>
+                    <!-- Modal body -->
+                    <div class="modal-header">
+                        <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <a id="btnModal" href="#contact"> <img class="img-fluid" src="img/util/img-modal.png" alt="" />
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Modal footer -->
+
+
+                </div>
+            </div>
+
+            <div class="container copyright text-center mt-4">
+                <p>
+                    &copy; <span>Cópia não autorizada</span> <strong class="px-1">Bocayuva Tintas <?php echo date("Y"); ?> - <?php echo date('Y', strtotime("+2 years", strtotime(now()))); ?></strong>
+                    <span>Todos os direitos reservados</span>
+
+            </div>
     </footer>
     <!-- End Footer -->
 
     <!-- Scroll Top Button -->
-    <a href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
+    <a title="This is my tooltip" href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
 
     <!-- Preloader -->
     <div id="preloader">
