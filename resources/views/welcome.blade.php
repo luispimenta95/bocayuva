@@ -93,15 +93,15 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="{{URL('img/hero-bg.jpg')}}" alt="" style="width:100%;">
+                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
                                 </div>
 
                                 <div class="item">
-                                    <img src="{{URL('img/hero-bg.jpg')}}" alt="" style="width:100%;">
+                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
                                 </div>
 
                                 <div class="item">
-                                    <img src="{{URL('img/hero-bg.jpg')}}" alt="" style="width:100%;">
+                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
                                 </div>
                             </div>
 
