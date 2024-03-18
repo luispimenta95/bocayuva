@@ -42,10 +42,14 @@ function clickCircle(dados) {
                     "<img class='img-fluid' src='" +
                     imgPath +
                     "' alt='' />" +
-                    /*"<br>" +
-                    "<p>" +
+                    "<br>" +
+                    "<h4 class='text-center'>" +
                     item.nome_produto +
-                    "</p>" +*/
+                    "</h4>" +
+                      "<br>" +
+                    "<h4 class='text-center'>R$" +
+                    item.valor +
+                    "</h4>" +
                     "</div>";
 
                 $("#produtos").html(posts);

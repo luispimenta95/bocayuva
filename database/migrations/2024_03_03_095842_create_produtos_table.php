@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome_produto')->unique();
             $table->string('descricao');
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(0);
+            $table->boolean('promocao')->default(0);
+
             $table->string('imagem_produto');
             $table->float('valor', 8, 2);
             $table->timestamp('data_criacao')->useCurrent();

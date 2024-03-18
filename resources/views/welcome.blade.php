@@ -45,9 +45,8 @@
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
-                    <li><a href="#team">Nossos clientes</a></li>
+                    <!--    <li><a href="#team">Nossos clientes</a></li> -->
                     <li><a href="#instagram">Nosso Instagram</a></li>
-
                     <li><a href="#contact">Contato</a></li>
                 </ul>
 
@@ -88,21 +87,39 @@
                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#myCarousel" data-slide-to="1"></li>
                                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                <li data-target="#myCarousel" data-slide-to="4"></li>
+                                <li data-target="#myCarousel" data-slide-to="5"></li>
+                                <li data-target="#myCarousel" data-slide-to="6"></li>
                             </ol>
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
+                                    <img class="quem-somos" src="{{URL('img/slide/1.jpg')}}">
                                 </div>
 
                                 <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
+                                    <img class="quem-somos" src="{{URL('img/slide/2.jpg')}}">
                                 </div>
 
                                 <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/hero-bg.jpg')}}">
+                                    <img class="quem-somos" src="{{URL('img/slide/3.jpg')}}">
                                 </div>
+
+                                <div class="item">
+                                    <img class="quem-somos" src="{{URL('img/slide/5.jpg')}}">
+                                </div>
+                                <div class="item">
+                                    <img class="quem-somos" src="{{URL('img/slide/6.jpg')}}">
+                                </div>
+                                <div class="item">
+                                    <img class="quem-somos" src="{{URL('img/slide/7.jpg')}}">
+                                </div>
+                                <div class="item">
+                                    <img class="quem-somos" src="{{URL('img/slide/8.jpg')}}">
+                                </div>
+
                             </div>
 
                             <!-- Left and right controls -->
@@ -119,15 +136,13 @@
                     <!-- End Service Item -->
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <p class="description">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <p class="description text-justify">
+                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano. </p>
+                        <p class="description text-justify">
+                            Já nos anos 2000, abriram a loja de Planaltina/DF que contava com um espaço reduzido, mas logo passaria por uma ampliação para o local em que funciona atualmente. Após a separação dos sócios, sob a liderança de Renato, foram fundadas as lojas do Araponga/DF e de Formosa/GO. Tudo corria bem quando em maio de 2022 perdemos o sorriso largo do nosso líder Renato Bocayuva. Diante dessa fatalidade, assumiu sua esposa Scheila Bocayuva, juntamente com suas duas filhas, Julia e Mariana Bocayuva.
                         </p>
-                        <p class="description">
-                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                        </p>
-                        <p class="description">
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                        </p>
+                        <p class="description text-justify">
+                            Este é um breve relato para deixar os clientes e amigos em contato com nossa visão: ser referência em tintas no mercado de atuação; nossa missão: ser a melhor loja de tintas, com um atendimento personalizado sem deixar de viabilizar as condições econômicas para o cliente; nossos princípios e valores: ouvir e servir profissionais, clientes e fornecedores gestão ética, participativa e inovadora; responsabilidade com a preservação do meio ambiente; comprometimento com a comunidade; e imagem, orgulho do que somos e do que fazemos. </p>
                     </div>
                     <!-- End Service Item -->
 
@@ -145,10 +160,9 @@
         <section id="services" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Serviços</h2>
+                <h2>PINTOR PARCEIRO</h2>
                 <p>
-                    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-                    consectetur velit
+                    Conheça o programa PINTOR PARCEIRO da Bocayuva Tintas
                 </p>
             </div>
             <!-- End Section Title -->
@@ -158,15 +172,14 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0">
-                                <i class="bi bi-briefcase"></i>
+                                <i class="bi bi-check"></i>
                             </div>
                             <div>
                                 <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Lorem Ipsum</a>
+                                    O QUE É O PROGRAMA PINTOR PARCEIRO?
                                 </h4>
                                 <p class="description">
-                                    Voluptatum deleniti atque corrupti quos dolores et quas
-                                    molestias excepturi sint occaecati cupiditate non provident
+                                    É o programa fidelidade em que o pintor cadastrado pode acumular pontos e trocá-los por descontos em produtos. Além disso, o pintor parceiro tem acesso a cursos gratuitos oferecidos pelos fornecedores parceiros da Bocayuva Tintas.
                                 </p>
                             </div>
                         </div>
@@ -176,15 +189,14 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0">
-                                <i class="bi bi-card-checklist"></i>
+                                <i class="bi bi-check"></i>
                             </div>
                             <div>
                                 <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Dolor Sitema</a>
+                                    Quais são as regras?
                                 </h4>
                                 <p class="description">
-                                    Minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                    ut aliquip ex ea commodo consequat tarad limino ata
+                                    O pintor parceiro deve se cadastrar em pelo menos uma de nossas lojas. A cada compra efetuada que for indicada por ele, o pintor pode acumular pontos baseado em um percentual da compra. O resgate dos pontos só pode ser feito na loja em que o pintor é cadastrado, mas pode se cadastrar em mais de uma loja.
                                 </p>
                             </div>
                         </div>
@@ -194,15 +206,15 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0">
-                                <i class="bi bi-bar-chart"></i>
+                                <i class="bi bi-check"></i>
                             </div>
                             <div>
                                 <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Sed ut perspiciatis</a>
+                                    Como faço para me cadastrar?
                                 </h4>
                                 <p class="description">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur
+                                    É simples! Pode cadastrar pelo formulário no <a target="_blank" href="https://forms.gle/ni9N9R8DTFoaxbtb9">link</a> ou se dirigir a uma de nossas lojas e solicitar o cadastro aos nossos vendedores.
+
                                 </p>
                             </div>
                         </div>
@@ -212,56 +224,19 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0">
-                                <i class="bi bi-binoculars"></i>
+                                <i class="bi bi-check"></i>
                             </div>
                             <div>
                                 <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Magni Dolores</a>
-                                </h4>
+                                    4. E se eu tiver mais dúvidas? </h4>
                                 <p class="description">
-                                    Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum
+                                    Consulte nosso regulamento ou entre em contato com a gente!
                                 </p>
                             </div>
                         </div>
                     </div>
                     <!-- End Service Item -->
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-brightness-high"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Nemo Enim</a>
-                                </h4>
-                                <p class="description">
-                                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                                    qui blanditiis praesentium voluptatum deleniti atque
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-calendar4-week"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    <a href="services-details.html" class="stretched-link">Eiusmod Tempor</a>
-                                </h4>
-                                <p class="description">
-                                    Et harum quidem rerum facilis est et expedita distinctio.
-                                    Nam libero tempore, cum soluta nobis est eligendi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
                 </div>
             </div>
         </section>
@@ -301,45 +276,6 @@
             </div>
         </section>
         <!-- End Portfolio Section -->
-
-
-
-        <!-- Team Section - Dashboard Page -->
-        <section id="team" class="team">
-            <!--  Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Nossos Clientes</h2>
-                <p>
-                    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-                    consectetur velit
-                </p>
-            </div>
-            <!-- End Section Title -->
-
-            <div class="container">
-                <div class="row gy-5">
-
-                    <?php foreach ($dados['reformas'] as $reforma) { ?>
-                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="member-img">
-                                <img id="imgReforma" src="/img/reformas/{{ $reforma->imagem }}" class="img-fluid" alt="" />
-                                <div class="social">
-                                    <a id="btnImg"><i class="bi bi-card-image"></i></a>
-
-                                </div>
-                            </div>
-                            <div class="member-info text-center">
-                                <h4><?php echo $reforma->propietario ?></h4>
-                                <p>
-                                    <?php echo $reforma->descricao ?>
-                                </p>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    <!-- End Team Member -->
-                </div>
-            </div>
-        </section>
 
         <section id="instagram" class="team">
             <!--  Section Title -->
@@ -408,9 +344,9 @@
 
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                    <h3 class="text-center">Bocayuva Tintas Arapoangas</h3>
+                                    <h3 class="text-center">Bocayuva Tintas Arapoanga</h3>
                                     <br>
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoangas-DF</p></a>
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoanga-DF</p></a>
 
                                     <br>
                                     <p> <a href="https://wa.link/hs63sq" target="_blank"> <img src="/img/util/whatsapp.png" class="btn-wpp" alt="" /> (61) 99942-8138</p></a>
