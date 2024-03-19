@@ -230,7 +230,8 @@
                                 <h4 class="title">
                                     4. E se eu tiver mais dúvidas? </h4>
                                 <p class="description">
-                                    Consulte nosso regulamento ou entre em contato com a gente!
+                                    <a href="{{ asset('docs/regulamento.pdf')}}" download="regulamento.pdf">Consulte nosso regulamento</a>
+                                    ou <a href="#contact">entre em contato com a gente!</a>
                                 </p>
                             </div>
                         </div>
