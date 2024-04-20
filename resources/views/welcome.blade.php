@@ -45,7 +45,6 @@
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
-                    <!--    <li><a href="#team">Nossos clientes</a></li> -->
                     <li><a href="#instagram">Nosso Instagram</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -80,45 +79,34 @@
 
             <div class="container">
                 <div class="row ">
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                <li data-target="#myCarousel" data-slide-to="3"></li>
-                                <li data-target="#myCarousel" data-slide-to="4"></li>
-                                <li data-target="#myCarousel" data-slide-to="5"></li>
-                                <li data-target="#myCarousel" data-slide-to="6"></li>
-                            </ol>
+                                <?php
+                                $classeBtn = "";
+                                for ($i = 1; $i <= $dados['qtdImgSlides']; $i++) {
+                                    if ($i == 1) {
+                                        $classeBtn = "active";
+                                    } else {
+                                        $classeBtn = "";
+                                    }
+                                ?>
 
+                                    <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class=<?php echo $classeBtn ?>>
+                                    <?php } ?>
+                            </ol>
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img class="quem-somos" src="{{URL('img/slide/1.jpg')}}">
                                 </div>
+                                <?php for ($i = 2; $i <= $dados['qtdImgSlides']; $i++) { ?>
+                                    <div class="item">
 
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/2.jpg')}}">
-                                </div>
-
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/3.jpg')}}">
-                                </div>
-
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/5.jpg')}}">
-                                </div>
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/6.jpg')}}">
-                                </div>
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/7.jpg')}}">
-                                </div>
-                                <div class="item">
-                                    <img class="quem-somos" src="{{URL('img/slide/8.jpg')}}">
-                                </div>
+                                        <img class="quem-somos" src="{{ URL('img/slide/' . $i . '.jpg') }}" alt="Image {{ $i }}">
+                                    </div>
+                                <?php } ?>
 
                             </div>
 
@@ -134,8 +122,9 @@
                         </div>
                     </div>
                     <!-- End Service Item -->
+                    <br><br> <br><br> <br><br> <br><br>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
                             Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano. </p>
                         <p class="description text-justify">

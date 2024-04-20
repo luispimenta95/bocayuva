@@ -33,7 +33,13 @@ class AdminController extends Controller
         $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
         $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
         $dados['posts'] = Post::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
-
+        $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         return view('welcome', ['dados' => $dados]);
+    }
+    private function countFiles($dir)
+    {
+        if (is_dir($dir)) {
+            return count(glob($dir . "*"));
+        }
     }
 }

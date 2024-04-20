@@ -14,7 +14,7 @@ window.onload = function () {
         bodyElement.offsetHeight
     );
 
-    //console.log("entire document height: " + height + "px");
+    console.log("entire document height: " + height + "px");
 };
 function clickCircle(dados) {
     var id = dados.id;
