@@ -59,7 +59,7 @@
     <main id="main">
         <!-- Hero Section - Dashboard Page -->
         <section id="hero" class="hero">
-            <img src="{{URL('img/logos/logo.png')}}" alt="" data-aos="fade-in" />
+            <img src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
 
         </section>
         <!-- End Hero Section -->
@@ -122,7 +122,6 @@
                         </div>
                     </div>
                     <!-- End Service Item -->
-                    <br><br> <br><br> <br><br> <br><br>
 
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">

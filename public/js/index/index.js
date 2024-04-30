@@ -3,18 +3,19 @@ window.onload = function () {
     var dados = [];
     dados["id"] = 1;
     clickCircle(dados);
-    var htmlElement = document.documentElement;
-    var bodyElement = document.body;
-
-    var height = Math.max(
-        htmlElement.clientHeight,
-        htmlElement.scrollHeight,
-        htmlElement.offsetHeight,
-        bodyElement.scrollHeight,
-        bodyElement.offsetHeight
-    );
-
-    console.log("entire document height: " + height + "px");
+  const body = document.body;
+const html = document.documentElement;
+const height = Math.max(body.scrollHeight, body.offsetHeight,
+  html.clientHeight, html.scrollHeight, html.offsetHeight);
+  const lar = Math.max(
+    document.documentElement["clientWidth"],
+    document.body["scrollWidth"],
+    document.documentElement["scrollWidth"],
+    document.body["offsetWidth"],
+    document.documentElement["offsetWidth"]
+);
+console.log(height)
+console.log(lar);
 };
 function clickCircle(dados) {
     var id = dados.id;
