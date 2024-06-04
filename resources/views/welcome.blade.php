@@ -243,25 +243,24 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="isotope-layout" data-default-filter="<?php echo '.' . $dados['categoriaPrincipal'] ?>" data-layout="masonry" data-sort="original-order">
-                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <?php
-                        $classe = 'filtros ';
-                        foreach ($dados['categorias'] as $categoria) {
-                            if ($categoria->nome_categoria == $dados['categoriaPrincipal']) {
-                                $classe .= ' filter-active';
-                            } else {
-                                $classe = 'filtros ';
-                            } ?>
-                            <li id="<?php echo $categoria->id ?>" onclick="clickCircle(this)" data-filter=" <?php echo '.' . $categoria->nome_categoria ?>" class=" <?php echo $classe ?>"><?php echo $categoria->nome_categoria ?></li>
+                <?php foreach ($dados['marcas'] as $key => $val) {
+                    $img = $val["img"];
+                    $link = $val["link"];
 
-                        <?php } ?>
-                    </ul>
+                ?>
+                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <a href="<?php echo $link ?>" target="_blank" id="btnImg">
+                                <img id="imgReforma" src="{{$img }}" class="img-fluid" alt="" />
+                            </a>
+                        </div>
+
+                    </div>
 
 
-                    <div id="produtos"> </div>
-                    <!-- End Portfolio Container -->
-                </div>
+
+
+                <?php } ?>
             </div>
         </section>
         <!-- End Portfolio Section -->

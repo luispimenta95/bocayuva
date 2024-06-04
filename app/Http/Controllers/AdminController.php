@@ -34,6 +34,40 @@ class AdminController extends Controller
         $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
         $dados['posts'] = Post::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
+        $dados['marcas'] = [
+            "coral" => [
+                "img" => '/img/marcas/coral.jpg',
+                "link" => 'https://www.coral.com.br/'
+
+            ],
+            "sherwin" => [
+                "img" =>  '/img/marcas/sherwin.png',
+                "link" => 'https://www.sherwin.com.br/'
+
+            ],
+            "luztol" => [
+                "img" =>  '/img/marcas/luztol.png',
+                "link" => 'https://www.luztol.com.br/'
+
+            ],
+            "atlas" => [
+                "img" =>  '/img/marcas/atlas.png',
+                "link" => 'https://www.pinceisatlas.com.br/site/pt'
+
+            ],
+            "tigre" => [
+                "img" =>  '/img/marcas/tigre.jpg',
+                "link" => 'https://www.tigre.com.br/'
+
+            ],
+            "grafitex" => [
+                "img" =>  '/img/marcas/grafitex.png',
+                "link" => 'https://grafftex.com.br/'
+
+            ]
+
+
+        ];
         return view('welcome', ['dados' => $dados]);
     }
     private function countFiles($dir)
