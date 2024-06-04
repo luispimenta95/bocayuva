@@ -256,10 +256,6 @@
                         </div>
 
                     </div>
-
-
-
-
                 <?php } ?>
             </div>
         </section>
