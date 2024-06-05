@@ -71,21 +71,28 @@
                         <?php
                         $status = "";
                         $promocao = "";
+                        $path = "";
+                        $pathPromo = "";
                         if ($produto->status == 1) {
-                            $status = "class ='glyphicon glyphicon-eye-open'";
+                            $path = ICONE_ATIVO;
+                            $status = "title = 'Ativo'";
                         } else {
-                            $status = "class ='glyphicon glyphicon-eye-close'";
+                            $status = "title = 'Inativo'";
+                            $path = ICONE_INATIVO;
                         }
                         if ($produto->promocao == 1) {
-                            $promocao = "class ='glyphicon glyphicon-ok-circle'";
+                            $promocao = "title = 'Em promoção'";
+                            $pathPromo = ICONE_ATIVO;
                         } else {
-                            $promocao = "class ='glyphicon glyphicon-remove-circle'";
+                            $promocao = "title = 'Preço comum'";
+                            $pathPromo = ICONE_INATIVO;
                         }
 
 
                         ?>
-                        <td class="promocao"> <a onclick="ativaPromocao({{ $produto->id }},{{ $produto->promocao }})"><span <?php echo $promocao ?>></span></a></td>
-                        <td class="status"> <a onclick="alteraStatus({{ $produto->id }},{{ $produto->status }})"><span <?php echo $status ?>></span></a></td>
+                        <td class="promocao"> <a <?php echo $promocao ?> onclick="ativaPromocao({{ $produto->id }},{{ $produto->promocao }})"><img <?php echo $pathPromo ?> class="img-fluid" alt="" /></a></td>
+                        <td class="status"> <a <?php echo $status ?> onclick="alteraStatus({{ $produto->id }},{{ $produto->status }})"><img <?php echo $path ?> class="img-fluid" alt="" /></a>
+                        </td>
 
                         <td> <a onclick="atualizaProduto({{ $produto->id }})"><button>Edit</button></a></td>
 

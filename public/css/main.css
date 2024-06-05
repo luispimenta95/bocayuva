@@ -22,7 +22,8 @@
 
 /* Global Colors */
 :root {
-    background-image: url("../img/util/fundo-site.jpg");
+     background-image: url("../img/util/fundo.png");*/
+   background-color: #df1529;
     --background-color-rgb: 211, 211, 211;
     --default-color: #16065b;
     --default-color-rgb: 22, 6, 91;
@@ -44,7 +45,7 @@
     --nav-hover-color: #16065b;
     --nav-dropdown-color: #3a3939;
     --nav-dropdown-hover-color: #16065b;
-    --nav-dropdown-background-color: #ffffff;
+    --nav-dropdown-background-color: ;
 }
 
 /* Smooth scroll */
@@ -57,8 +58,8 @@
 --------------------------------------------------------------*/
 body {
     color: var(--default-color);
-    background-image: url("../img/util/fundo-site.jpg");
-    font-family: var(--default-font);
+    background-image: url("../img/util/fundo.png") !important;
+        font-family: var(--default-font);
 }
 
 a {
@@ -1096,6 +1097,7 @@ section,
 .services .service-item {
     position: relative;
     padding-top: 40px;
+    
 }
 
 .services .service-item:before {
@@ -1164,7 +1166,7 @@ section,
 
 .services .service-item .description {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 /* Features Section - Home Page
@@ -1335,7 +1337,7 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-    background-image: url("../img/util/fundo-site.jpg");
+    background-image: url("../img/util/fundo.png") !important;
     font-size: 14px;
     margin-bottom: 0;
     padding-right: 50px;
@@ -1614,7 +1616,7 @@ section,
 /* Team Section - Home Page
 ------------------------------*/
 .team {
-    background-image: url("../img/util/fundo-site.jpg");
+    background-image: url("../img/util/fundo.png");
 }
 
 .team .member {
@@ -2160,6 +2162,7 @@ section,
 
 .portfolio-details .portfolio-description p {
     padding: 0;
+    font-size: 18px;
 }
 
 .portfolio-details .portfolio-description .testimonial-item {
@@ -2897,4 +2900,13 @@ section,
 .btn-wpp {
     max-width: 40px;
     height: auto;
+}
+.quem-somos {
+    width: 100%;
+}
+.text-justify{
+    font-size: 18px;
+}
+body{
+    background-color: #ffc107;
 }
