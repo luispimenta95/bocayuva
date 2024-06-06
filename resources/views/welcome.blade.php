@@ -41,7 +41,7 @@
             <!-- Nav Menu -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#hero" class="active">Home1</a></li>
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
