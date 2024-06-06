@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Dashboard - Append Bootstrap Template</title>
+    <title>Bocayuva Tintas</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Favicons -->
-    <link href="{{ asset('img/favicon.png')}}" rel="icon" />
+    <link href="{{ asset('img/logo.png')}}" rel="icon" />
     <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon" />
 
     <!-- Fonts -->
@@ -58,8 +58,8 @@
 
     <main id="main">
         <!-- Hero Section - Dashboard Page -->
-        <section id="hero" class="hero">
-            <img src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
+        <section id="hero">
+            <img class="img-fluid" src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
 
         </section>
         <!-- End Hero Section -->
