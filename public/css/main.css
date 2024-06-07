@@ -22,7 +22,7 @@
 
 /* Global Colors */
 :root {
-     background-image: url("../img/util/fundo.png");*/
+     background-image: url("../img/util/fundo.png");
    background-color: #df1529;
     --background-color-rgb: 211, 211, 211;
     --default-color: #16065b;
@@ -1337,7 +1337,6 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-    background-image: url("../img/util/fundo.png") !important;
     font-size: 14px;
     margin-bottom: 0;
     padding-right: 50px;
@@ -1613,11 +1612,8 @@ section,
     color: var(--accent-color);
 }
 
-/* Team Section - Home Page
-------------------------------*/
-.team {
-    background-image: url("../img/util/fundo.png");
-}
+
+
 
 .team .member {
     position: relative;
