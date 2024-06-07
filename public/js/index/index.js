@@ -1,5 +1,5 @@
 window.onload = function () {
-    $("#startModal").modal("show");
+   // $("#startModal").modal("show");
     var dados = [];
     dados["id"] = 1;
     clickCircle(dados);
