@@ -31,7 +31,7 @@ class AdminController extends Controller
         $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
         $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
         $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
-        $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
+       // $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
         $dados['posts'] = Post::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         $dados['marcas'] = [
