@@ -28,9 +28,6 @@ class AdminController extends Controller
 
     public function indexUser()
     {
-        $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
-        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
-        $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
         $dados['posts'] = $this->apiInsta();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         $dados['marcas'] = [
