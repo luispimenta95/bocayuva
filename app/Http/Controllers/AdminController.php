@@ -28,11 +28,7 @@ class AdminController extends Controller
 
     public function indexUser()
     {
-        $dados['reformas'] = Reforma::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
-        $dados['categorias'] = Categoria::where('status', STATUS_ATIVO)->get();
-        $dados['produtos'] = Produto::where('status', STATUS_ATIVO)->get();
-       // $dados['categoriaPrincipal'] = Categoria::where('status', STATUS_ATIVO)->first()->nome_categoria;
-        $dados['posts'] = Post::where('status', STATUS_ATIVO)->orderBy('id', ORDER_DESC)->limit(NUM_REGISTROS)->get();
+        $dados['posts'] = $this->apiInsta();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         $dados['marcas'] = [
             "coral" => [
@@ -75,5 +71,31 @@ class AdminController extends Controller
         if (is_dir($dir)) {
             return count(glob($dir . "*"));
         }
+    }
+     private function fetchData($url){
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+      $result = curl_exec($ch);
+      curl_close($ch);
+      return $result;
+  }
+
+
+
+      private function apiInsta()
+    {
+        $fields = "id,media_type,media_url,thumbnail_url,timestamp,permalink,caption";
+        $token = config('app.secret');
+        $limit = config('app.limit');
+
+        $result = $this->fetchData("https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}");
+
+
+        $result_decode = json_decode($result, true);
+
+        return $result_decode['data'];
+
     }
 }
