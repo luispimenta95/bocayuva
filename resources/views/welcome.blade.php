@@ -272,22 +272,35 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="row gy-5">
+                <div class="row">
 
-                    <?php foreach ($dados['posts'] as $post) { ?>
-                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="member-img">
-                                <img id="imgReforma" src="/img/posts/{{ $post->imagem }}" class="img-fluid" alt="" />
-                                <div class="social">
-                                    <a href="<?php echo $post->link ?>" target="_blank" id="btnImg"><i class="bi bi-card-image"></i></a>
+                    <?php foreach ($dados['posts'] as $post) {
 
-                                </div>
-                            </div>
+                        $caption = $post["caption"];
+                        $permalink = $post["permalink"];
+                        $media_type = $post["media_type"];
 
+                        if ($media_type == "VIDEO") {
+                            $media_url = $post["thumbnail_url"];
+                        } else {
+                            $media_url = $post["media_url"];
+                        }
+                    ?>
+                        <div class="col-md-4">
+                            <a href="<?php echo $permalink ?>" target="_blank">
+
+                                <div class="thumbnail">
+
+                                    <img src="<?php echo $media_url; ?>" loading="lazy" alt="<?php echo $caption; ?>">
+                                    <div class="caption">
+                                        <p><?php echo $caption; ?></p>
+                                    </div>
+                            </a>
                         </div>
-                    <?php } ?>
-                    <!-- End Team Member -->
                 </div>
+            <?php } ?>
+            <!-- End Team Member -->
+            </div>
             </div>
         </section>
         <!-- End Team Section -->

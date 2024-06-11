@@ -185,6 +185,7 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
-    'igClient' => env('IG_CLIENT'),
-    'igSecret' => env('IG_SECRET'),
+    'secret' => env('IG_SECRET'),
+    'limit' => env('IG_LIMIT'),
+
 ];
