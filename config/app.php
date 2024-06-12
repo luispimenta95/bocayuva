@@ -187,5 +187,6 @@ return [
 
     'secret' => env('IG_SECRET'),
     'limit' => env('IG_LIMIT'),
+    'production' => env('IS_PRODUCTION'),
 
 ];

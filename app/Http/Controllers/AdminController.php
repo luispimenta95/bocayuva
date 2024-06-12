@@ -64,6 +64,9 @@ class AdminController extends Controller
 
 
         ];
+        if(!config('app.production')){
+            return view('manutencao');
+        }
         return view('welcome', ['dados' => $dados]);
     }
     private function countFiles($dir)

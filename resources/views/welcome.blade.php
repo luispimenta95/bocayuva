@@ -122,10 +122,11 @@
                         </div>
                     </div>
                     <!-- End Service Item -->
-
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
-                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano. </p>
+                            <br><br>
+                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano.
+                        </p>
                         <p class="description text-justify">
                             Já nos anos 2000, abriram a loja de Planaltina/DF que contava com um espaço reduzido, mas logo passaria por uma ampliação para o local em que funciona atualmente. Após a separação dos sócios, sob a liderança de Renato, foram fundadas as lojas do Araponga/DF e de Formosa/GO. Tudo corria bem quando em maio de 2022 perdemos o sorriso largo do nosso líder Renato Bocayuva. Diante dessa fatalidade, assumiu sua esposa Scheila Bocayuva, juntamente com suas duas filhas, Julia e Mariana Bocayuva.
                         </p>
