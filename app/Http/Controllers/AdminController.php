@@ -28,6 +28,11 @@ class AdminController extends Controller
 
     public function indexUser()
     {
+        $production = config('app.production');
+        if (!$production) {
+            return view('manutencao');
+        }
+        
         $dados['posts'] = $this->apiInsta();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         $dados['marcas'] = [
@@ -64,9 +69,7 @@ class AdminController extends Controller
 
 
         ];
-        if(!config('app.production')){
-            return view('manutencao');
-        }
+       
         return view('welcome', ['dados' => $dados]);
     }
     private function countFiles($dir)
@@ -97,6 +100,7 @@ class AdminController extends Controller
 
 
         $result_decode = json_decode($result, true);
+
 
         return $result_decode['data'];
 
