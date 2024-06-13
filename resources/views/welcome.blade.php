@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Dashboard - Append Bootstrap Template</title>
+    <title>Bocayuva Tintas</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Favicons -->
-    <link href="{{ asset('img/favicon.png')}}" rel="icon" />
+    <link href="{{ asset('img/logo.png')}}" rel="icon" />
     <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon" />
 
     <!-- Fonts -->
@@ -58,8 +58,8 @@
 
     <main id="main">
         <!-- Hero Section - Dashboard Page -->
-        <section id="hero" class="hero">
-            <img src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
+        <section id="hero">
+            <img class="img-fluid" src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
 
         </section>
         <!-- End Hero Section -->
@@ -122,10 +122,11 @@
                         </div>
                     </div>
                     <!-- End Service Item -->
-
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
-                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano. </p>
+                            <br><br>
+                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano.
+                        </p>
                         <p class="description text-justify">
                             Já nos anos 2000, abriram a loja de Planaltina/DF que contava com um espaço reduzido, mas logo passaria por uma ampliação para o local em que funciona atualmente. Após a separação dos sócios, sob a liderança de Renato, foram fundadas as lojas do Araponga/DF e de Formosa/GO. Tudo corria bem quando em maio de 2022 perdemos o sorriso largo do nosso líder Renato Bocayuva. Diante dessa fatalidade, assumiu sua esposa Scheila Bocayuva, juntamente com suas duas filhas, Julia e Mariana Bocayuva.
                         </p>
@@ -272,22 +273,35 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="row gy-5">
+                <div class="row">
 
-                    <?php foreach ($dados['posts'] as $post) { ?>
-                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="member-img">
-                                <img id="imgReforma" src="/img/posts/{{ $post->imagem }}" class="img-fluid" alt="" />
-                                <div class="social">
-                                    <a href="<?php echo $post->link ?>" target="_blank" id="btnImg"><i class="bi bi-card-image"></i></a>
+                    <?php foreach ($dados['posts'] as $post) {
 
-                                </div>
-                            </div>
+                        $caption = $post["caption"];
+                        $permalink = $post["permalink"];
+                        $media_type = $post["media_type"];
 
+                        if ($media_type == "VIDEO") {
+                            $media_url = $post["thumbnail_url"];
+                        } else {
+                            $media_url = $post["media_url"];
+                        }
+                    ?>
+                        <div class="col-md-4">
+                            <a href="<?php echo $permalink ?>" target="_blank">
+
+                                <div class="thumbnail">
+
+                                    <img src="<?php echo $media_url; ?>" loading="lazy" alt="<?php echo $caption; ?>">
+                                    <div class="caption">
+                                        <p><?php echo $caption; ?></p>
+                                    </div>
+                            </a>
                         </div>
-                    <?php } ?>
-                    <!-- End Team Member -->
                 </div>
+            <?php } ?>
+            <!-- End Team Member -->
+            </div>
             </div>
         </section>
         <!-- End Team Section -->
