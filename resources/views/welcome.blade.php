@@ -273,21 +273,21 @@
             </div>
         </section>
         <!-- End Portfolio Section -->
-
+<!--
         <section id="instagram" class="team">
-            <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Nossas postagens</h2>
                 <p>
                     Acompanhe nosso Instagram
                 </p>
             </div>
-            <!-- End Section Title -->
 
             <div class="container">
                 <div class="row">
 
-                    <?php foreach ($dados['posts'] as $post) {
+                    <?php 
+                    /*
+                    foreach ($dados['posts'] as $post) {
 
                         $caption = $post["caption"];
                         $permalink = $post["permalink"];
@@ -311,20 +311,14 @@
                             </a>
                         </div>
                 </div>
-            <?php } ?>
-            <!-- End Team Member -->
+            <?php }*/ ?>
             </div>
             </div>
         </section>
-        <!-- End Team Section -->
-
-        <!-- Call-to-action Section - Dashboard Page -->
-
-        <!-- End Call-to-action Section -->
 
 
 
-        <!-- Contact Section - Dashboard Page -->
+                -->
         <section id="contact" class="contact">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">

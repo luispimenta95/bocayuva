@@ -28,12 +28,13 @@ class AdminController extends Controller
 
     public function indexUser()
     {
-        $production = config('app.production');
+        //$production = config('app.production');
+        $production = true;
         if (!$production) {
             return view('manutencao');
         }
         
-        $dados['posts'] = $this->apiInsta();
+        //$dados['posts'] = $this->apiInsta();
         $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
         $dados['marcas'] = [
             "coral" => [
