@@ -136,13 +136,8 @@
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
                             <br><br>
-                            Ao longo dos anos, as empresas surgiram para que fosse possível superar as adversidades do tempo e carregar quase que pela eternidade princípios e valores, a visão para um futuro generoso. A Bocayuva Tintas surgiu dessa necessidade de construir um sonho. Ela foi criada em 1990 por quatro dos filhos de Seu Zé. Como toda boa empresa de família, deu errado, deu certo, deu errado de novo e deu certo de novo. Quando reabriu, em Planaltina/GO no ano de 1996, a loja contava com dois sócios Renato e Luciano.
+                            A Bocayuva Tintas nasceu em 1990, fruto do sonho de quatro filhos de Seu Zé, passando pelos desafios típicos de uma empresa familiar até se consolidar. Reaberta em 1996, em Planaltina/GO, com os sócios Renato e Luciano, a empresa expandiu para Planaltina/DF, onde a loja cresceu e se estabeleceu no endereço atual. Após a separação dos sócios, Renato fundou as unidades do Arapoanga/DF e de Formosa/GO. Em 2022, com sua partida, sua esposa Scheila e as filhas Julia e Mariana assumiram a gestão, mantendo viva a missão de oferecer atendimento personalizado, com condições acessíveis, e a visão de ser referência em tintas, guiados por princípios de ética, inovação, responsabilidade ambiental, compromisso social e orgulho do que fazem.                        </p>
                         </p>
-                        <p class="description text-justify">
-                            Já nos anos 2000, abriram a loja de Planaltina/DF que contava com um espaço reduzido, mas logo passaria por uma ampliação para o local em que funciona atualmente. Após a separação dos sócios, sob a liderança de Renato, foram fundadas as lojas do Araponga/DF e de Formosa/GO. Tudo corria bem quando em maio de 2022 perdemos o sorriso largo do nosso líder Renato Bocayuva. Diante dessa fatalidade, assumiu sua esposa Scheila Bocayuva, juntamente com suas duas filhas, Julia e Mariana Bocayuva.
-                        </p>
-                        <p class="description text-justify">
-                            Este é um breve relato para deixar os clientes e amigos em contato com nossa visão: ser referência em tintas no mercado de atuação; nossa missão: ser a melhor loja de tintas, com um atendimento personalizado sem deixar de viabilizar as condições econômicas para o cliente; nossos princípios e valores: ouvir e servir profissionais, clientes e fornecedores gestão ética, participativa e inovadora; responsabilidade com a preservação do meio ambiente; comprometimento com a comunidade; e imagem, orgulho do que somos e do que fazemos. </p>
                     </div>
                     <!-- End Service Item -->
 
