@@ -57,7 +57,6 @@
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
-                    <li><a href="#instagram">Nosso Instagram</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
 
