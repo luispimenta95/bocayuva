@@ -94,31 +94,16 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <?php
-                                $classeBtn = "";
-                                for ($i = 1; $i <= $dados['qtdImgSlides']; $i++) {
-                                    if ($i == 1) {
-                                        $classeBtn = "active";
-                                    } else {
-                                        $classeBtn = "";
-                                    }
-                                ?>
-
-                                    <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class=<?php echo $classeBtn ?>>
-                                    <?php } ?>
+                                @foreach($slides as $index => $slide)
+                                <li data-target="#myCarousel" data-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></li>
+                                @endforeach
                             </ol>
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="quem-somos" src="{{URL('img/slide/1.jpg')}}">
-                                </div>
-                                <?php for ($i = 2; $i <= $dados['qtdImgSlides']; $i++) { ?>
-                                    <div class="item">
-
-                                        <img class="quem-somos" src="{{ URL('img/slide/' . $i . '.jpg') }}" alt="Image {{ $i }}">
-                                    </div>
-                                <?php } ?>
-
+                                @foreach($slides as $index => $slide)
+                                <div class="item {{ $index == 0 ? 'active' : '' }}">
+<img class="quem-somos" src="{{ asset('storage/' . $slide) }}" alt="Slide {{ $index + 1 }}">                                </div>
+                                @endforeach
                             </div>
 
                             <!-- Left and right controls -->
@@ -136,14 +121,9 @@
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
                             <br><br>
-                            A Bocayuva Tintas nasceu em 1990, fruto do sonho de quatro filhos de Seu Zé, passando pelos desafios típicos de uma empresa familiar até se consolidar. Reaberta em 1996, em Planaltina/GO, com os sócios Renato e Luciano, a empresa expandiu para Planaltina/DF, onde a loja cresceu e se estabeleceu no endereço atual. Após a separação dos sócios, Renato fundou as unidades do Arapoanga/DF e de Formosa/GO. Em 2022, com sua partida, sua esposa Scheila e as filhas Julia e Mariana assumiram a gestão, mantendo viva a missão de oferecer atendimento personalizado, com condições acessíveis, e a visão de ser referência em tintas, guiados por princípios de ética, inovação, responsabilidade ambiental, compromisso social e orgulho do que fazem.                        </p>
+                            A Bocayuva Tintas nasceu em 1990, fruto do sonho de quatro filhos de Seu Zé, passando pelos desafios típicos de uma empresa familiar até se consolidar. Reaberta em 1996, em Planaltina/GO, com os sócios Renato e Luciano, a empresa expandiu para Planaltina/DF, onde a loja cresceu e se estabeleceu no endereço atual. Após a separação dos sócios, Renato fundou as unidades do Arapoanga/DF e de Formosa/GO. Em 2022, com sua partida, sua esposa Scheila e as filhas Julia e Mariana assumiram a gestão, mantendo viva a missão de oferecer atendimento personalizado, com condições acessíveis, e a visão de ser referência em tintas, guiados por princípios de ética, inovação, responsabilidade ambiental, compromisso social e orgulho do que fazem.
                         </p>
                     </div>
-                    <!-- End Service Item -->
-
-
-
-
                     <!-- End Service Item -->
                 </div>
             </div>
@@ -250,7 +230,7 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <?php foreach ($dados['marcas'] as $key => $val) {
+                <?php foreach ($marcas as $key => $val) {
                     $img = $val["img"];
                     $link = $val["link"];
 
@@ -267,7 +247,7 @@
             </div>
         </section>
         <!-- End Portfolio Section -->
-<!--
+        <!--
         <section id="instagram" class="team">
             <div class="container section-title" data-aos="fade-up">
                 <h2>Nossas postagens</h2>
@@ -279,7 +259,7 @@
             <div class="container">
                 <div class="row">
 
-                    <?php 
+                    <?php
                     /*
                     foreach ($dados['posts'] as $post) {
 
