@@ -22,7 +22,6 @@
 
 /* Global Colors */
 :root {
-     background-image: url("../img/util/fundo.png");
    background-color: #df1529;
     --background-color-rgb: 211, 211, 211;
     --default-color: #16065b;
@@ -40,12 +39,58 @@
 --------------------------------------------------------------*
 
 /* Nav Menu Colors */
-:root {
-    --nav-color: #d3d3d3;
-    --nav-hover-color: #16065b;
-    --nav-dropdown-color: #3a3939;
-    --nav-dropdown-hover-color: #16065b;
-    --nav-dropdown-background-color: ;
+#navmenu {
+    width: 100%;
+    background-color: rgb(25, 3, 92); /* Cor de fundo desejada */
+    padding: 10px 10;
+}
+
+#navmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-wrap: wrap;
+}
+
+#navmenu ul li {
+    margin: 0 15px;
+}
+
+#navmenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+#navmenu ul li a:hover {
+    color: rgb(7, 41, 208); /* Exemplo: laranja no hover */
+}
+
+#navmenu .mobile-nav-toggle {
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    display: none; /* Ocultar para desktop */
+}
+
+/* Responsivo: mostra o botão em telas pequenas */
+@media (max-width: 991px) {
+    #navmenu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navmenu .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
 }
 
 /* Smooth scroll */
@@ -58,7 +103,6 @@
 --------------------------------------------------------------*/
 body {
     color: var(--default-color);
-    background-image: url("../img/util/fundo.png") !important;
         font-family: var(--default-font);
 }
 
@@ -2905,4 +2949,141 @@ section,
 }
 body{
     background-color: #ffc107;
+}
+
+.titulo-pincel-verde {
+    background: url('/img/util/pincel-verde.png') repeat center center;
+    background-size: 100% 100%;
+    color: white;
+    font-size: clamp(26px, 5vw, 42px); /* Responsivo */
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5rem 3rem;
+    margin: 2rem auto;
+    width: fit-content;
+    display: inline-block;
+    line-height: 1.2;
+    white-space: nowrap;
+    font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Custom Styles - Bocayuva Tintas
+--------------------------------------------------------------*/
+
+/* Marcas Parceiras Slider */
+.marcas-swiper {
+    padding: 20px 0 60px 0;
+}
+
+.marca-item {
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.marca-item:hover {
+    transform: translateY(-5px);
+}
+
+.marca-logo {
+    max-height: 80px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.marcas-swiper .swiper-button-next,
+.marcas-swiper .swiper-button-prev {
+    color: #4CAF50;
+}
+
+.marcas-swiper .swiper-pagination-bullet-active {
+    background: #4CAF50;
+}
+
+/* Simulador de Cores */
+.btn-cor {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-cor:hover {
+    transform: scale(1.1);
+}
+
+.simulador-container {
+    text-align: center;
+}
+
+.simulador-colors {
+    margin-bottom: 20px;
+}
+
+.simulador-canvas-wrapper {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.simulador-canvas {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* Carousel Custom Styles */
+.quem-somos {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp img,
+.btn-wpp {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Modal Styles */
+.modal-header .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .marca-item {
+        height: 120px;
+        padding: 15px;
+    }
+    
+    .marca-logo {
+        max-height: 60px;
+        max-width: 120px;
+    }
+    
+    .quem-somos {
+        height: 250px;
+    }
+    
+    .btn-cor {
+        width: 35px;
+        height: 35px;
+        margin: 3px;
+    }
 }

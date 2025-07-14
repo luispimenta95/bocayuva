@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SimuladorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
    Route::get('/', [AdminController::class, 'indexUser'])->name('home');
+   Route::get('/simulador', [SimuladorController::class, 'index'])->name('simulador.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

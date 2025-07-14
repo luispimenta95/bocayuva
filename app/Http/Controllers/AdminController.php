@@ -70,7 +70,15 @@ class AdminController extends Controller
         ]
     ];
 
-    return view('welcome', compact('slides', 'marcas'));
+     $cores = [
+            ['nome' => 'Vermelho', 'hex' => '#FF0000'],
+            ['nome' => 'Verde', 'hex' => '#00FF00'],
+            ['nome' => 'Azul', 'hex' => '#0000FF'],
+            ['nome' => 'Bege', 'hex' => '#F5F5DC'],
+            ['nome' => 'Cinza', 'hex' => '#808080'],
+        ];
+
+    return view('welcome', compact('slides', 'marcas', 'cores'));
 }
 
        public function dashboard()
