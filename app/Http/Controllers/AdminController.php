@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Post;
 use App\Models\Produto;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -26,84 +27,74 @@ class AdminController extends Controller
         return view('admin.pages.index', ['dados' => $dados]);
     }
 
-    public function indexUser()
-    {
-        //$production = config('app.production');
-        $production = true;
-        if (!$production) {
-            return view('manutencao');
-        }
+   public function indexUser()
+{
+    
+    //$production = config('app.production');
+    $production = true;
+
+    if (!$production) {
+        return view('manutencao');
+    }
+
+    // $posts = $this->apiInsta(); // se desejar ativar depois
+
+       $arquivos = Storage::disk('public')->files('slides');
+
+    // Filtrar apenas imagens (opcional)
+    $slides = array_filter($arquivos, function ($path) {
+        return preg_match('/\.(jpe?g|png|gif|webp)$/i', $path);
+    });
+
+    $marcas = [
         
-        //$dados['posts'] = $this->apiInsta();
-        $dados['qtdImgSlides'] = $this->countFiles(public_path() . '/img/slide/');
-        $dados['marcas'] = [
-            "coral" => [
-                "img" => '/img/marcas/coral.jpg',
-                "link" => 'https://www.coral.com.br/'
+        "sherwin" => [
+            "img" => '/img/marcas/sherwin.png',
+            "link" => 'https://www.sherwin.com.br/'
+        ],
+        "luztol" => [
+            "img" => '/img/marcas/luztol.png',
+            "link" => 'https://www.luztol.com.br/'
+        ],
+        "atlas" => [
+            "img" => '/img/marcas/atlas.png',
+            "link" => 'https://www.pinceisatlas.com.br/site/pt'
+        ],
+        "tigre" => [
+            "img" => '/img/marcas/tigre.jpg',
+            "link" => 'https://www.tigre.com.br/'
+        ],
+        "grafitex" => [
+            "img" => '/img/marcas/grafitex.png',
+            "link" => 'https://grafftex.com.br/'
+        ]
+    ];
 
-            ],
-            "sherwin" => [
-                "img" =>  '/img/marcas/sherwin.png',
-                "link" => 'https://www.sherwin.com.br/'
-
-            ],
-            "luztol" => [
-                "img" =>  '/img/marcas/luztol.png',
-                "link" => 'https://www.luztol.com.br/'
-
-            ],
-            "atlas" => [
-                "img" =>  '/img/marcas/atlas.png',
-                "link" => 'https://www.pinceisatlas.com.br/site/pt'
-
-            ],
-            "tigre" => [
-                "img" =>  '/img/marcas/tigre.jpg',
-                "link" => 'https://www.tigre.com.br/'
-
-            ],
-            "grafitex" => [
-                "img" =>  '/img/marcas/grafitex.png',
-                "link" => 'https://grafftex.com.br/'
-
-            ]
-
-
+     $cores = [
+            ['nome' => 'Vermelho', 'hex' => '#FF0000'],
+            ['nome' => 'Verde', 'hex' => '#00FF00'],
+            ['nome' => 'Azul', 'hex' => '#0000FF'],
+            ['nome' => 'Bege', 'hex' => '#F5F5DC'],
+            ['nome' => 'Cinza', 'hex' => '#808080'],
         ];
-       
-        return view('welcome', ['dados' => $dados]);
-    }
-    private function countFiles($dir)
+
+    return view('welcome', compact('slides', 'marcas', 'cores'));
+}
+
+       public function dashboard()
     {
-        if (is_dir($dir)) {
-            return count(glob($dir . "*"));
-        }
+        return view('admin.dashboard');
     }
-     private function fetchData($url){
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-      $result = curl_exec($ch);
-      curl_close($ch);
-      return $result;
-  }
 
-
-
-      private function apiInsta()
+    public function slides()
     {
-        $fields = "id,media_type,media_url,thumbnail_url,timestamp,permalink,caption";
-        $token = config('app.secret');
-        $limit = config('app.limit');
-
-        $result = $this->fetchData("https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}");
-
-
-        $result_decode = json_decode($result, true);
-
-
-        return $result_decode['data'];
-
+        return view('admin.slides.index');
     }
+
+    public function banner()
+    {
+        return view('admin.banner.index');
+    }
+
+    
 }

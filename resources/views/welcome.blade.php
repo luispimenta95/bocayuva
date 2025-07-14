@@ -40,8 +40,9 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/main.css')}}" rel="stylesheet" />
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -57,6 +58,7 @@
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
+                    <li><a href="#simulador">Simulador</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
 
@@ -75,13 +77,11 @@
         </section>
         <!-- End Hero Section -->
 
-
-
         <!-- Serviços Section - Dashboard Page -->
         <section id="about" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Quem somos</h2>
+                <h2 class="titulo-pincel-verde">Quem somos</h2>
                 <p>
                     Conheça um pouco da nossa história
                 </p>
@@ -94,31 +94,17 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <?php
-                                $classeBtn = "";
-                                for ($i = 1; $i <= $dados['qtdImgSlides']; $i++) {
-                                    if ($i == 1) {
-                                        $classeBtn = "active";
-                                    } else {
-                                        $classeBtn = "";
-                                    }
-                                ?>
-
-                                    <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class=<?php echo $classeBtn ?>>
-                                    <?php } ?>
+                                @foreach($slides as $index => $slide)
+                                <li data-target="#myCarousel" data-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></li>
+                                @endforeach
                             </ol>
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="quem-somos" src="{{URL('img/slide/1.jpg')}}">
+                                @foreach($slides as $index => $slide)
+                                <div class="item {{ $index == 0 ? 'active' : '' }}">
+                                    <img class="quem-somos" src="{{ asset('storage/' . $slide) }}" alt="Slide {{ $index + 1 }}">
                                 </div>
-                                <?php for ($i = 2; $i <= $dados['qtdImgSlides']; $i++) { ?>
-                                    <div class="item">
-
-                                        <img class="quem-somos" src="{{ URL('img/slide/' . $i . '.jpg') }}" alt="Image {{ $i }}">
-                                    </div>
-                                <?php } ?>
-
+                                @endforeach
                             </div>
 
                             <!-- Left and right controls -->
@@ -135,21 +121,15 @@
                     <!-- End Service Item -->
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                         <p class="description text-justify">
-                            <br><br>
-                            A Bocayuva Tintas nasceu em 1990, fruto do sonho de quatro filhos de Seu Zé, passando pelos desafios típicos de uma empresa familiar até se consolidar. Reaberta em 1996, em Planaltina/GO, com os sócios Renato e Luciano, a empresa expandiu para Planaltina/DF, onde a loja cresceu e se estabeleceu no endereço atual. Após a separação dos sócios, Renato fundou as unidades do Arapoanga/DF e de Formosa/GO. Em 2022, com sua partida, sua esposa Scheila e as filhas Julia e Mariana assumiram a gestão, mantendo viva a missão de oferecer atendimento personalizado, com condições acessíveis, e a visão de ser referência em tintas, guiados por princípios de ética, inovação, responsabilidade ambiental, compromisso social e orgulho do que fazem.                        </p>
+                            <br /><br />
+                            A Bocayuva Tintas nasceu em 1990, fruto do sonho de quatro filhos de Seu Zé, passando pelos desafios típicos de uma empresa familiar até se consolidar. Reaberta em 1996, em Planaltina/GO, com os sócios Renato e Luciano, a empresa expandiu para Planaltina/DF, onde a loja cresceu e se estabeleceu no endereço atual. Após a separação dos sócios, Renato fundou as unidades do Arapoanga/DF e de Formosa/GO. Em 2022, com sua partida, sua esposa Scheila e as filhas Julia e Mariana assumiram a gestão, mantendo viva a missão de oferecer atendimento personalizado, com condições acessíveis, e a visão de ser referência em tintas, guiados por princípios de ética, inovação, responsabilidade ambiental, compromisso social e orgulho do que fazem.
                         </p>
                     </div>
-                    <!-- End Service Item -->
-
-
-
-
                     <!-- End Service Item -->
                 </div>
             </div>
         </section>
         <!-- Stats Section - Dashboard Page -->
-
 
         <!-- Serviços Section - Dashboard Page -->
         <section id="services" class="services">
@@ -249,70 +229,75 @@
             </div>
             <!-- End Section Title -->
 
-            <div class="container">
-                <?php foreach ($dados['marcas'] as $key => $val) {
-                    $img = $val["img"];
-                    $link = $val["link"];
-
-                ?>
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img">
-                            <a href="<?php echo $link ?>" target="_blank" id="btnImg">
-                                <img id="imgReforma" src="{{$img }}" class="img-fluid" alt="" />
-                            </a>
-                        </div>
-
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper marcas-swiper">
+                    <div class="swiper-wrapper">
+                        @foreach($marcas as $key => $marca)
+                            <div class="swiper-slide">
+                                <div class="marca-item text-center">
+                                    <a href="{{ $marca['link'] }}" target="_blank">
+                                        <img src="{{ $marca['img'] }}" class="img-fluid marca-logo" alt="Logo {{ $key }}" />
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                <?php } ?>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
             </div>
         </section>
         <!-- End Portfolio Section -->
-<!--
-        <section id="instagram" class="team">
+
+        <!-- Simulador de Cores Section -->
+        <section id="simulador" class="services">
             <div class="container section-title" data-aos="fade-up">
-                <h2>Nossas postagens</h2>
-                <p>
-                    Acompanhe nosso Instagram
-                </p>
+                <h2>Simulador de Cores</h2>
+                <p>Visualize como as cores ficarão em um ambiente</p>
             </div>
 
-            <div class="container">
-                <div class="row">
-
-                    <?php 
-                    /*
-                    foreach ($dados['posts'] as $post) {
-
-                        $caption = $post["caption"];
-                        $permalink = $post["permalink"];
-                        $media_type = $post["media_type"];
-
-                        if ($media_type == "VIDEO") {
-                            $media_url = $post["thumbnail_url"];
-                        } else {
-                            $media_url = $post["media_url"];
-                        }
-                    ?>
-                        <div class="col-md-4">
-                            <a href="<?php echo $permalink ?>" target="_blank">
-
-                                <div class="thumbnail">
-
-                                    <img src="<?php echo $media_url; ?>" loading="lazy" alt="<?php echo $caption; ?>">
-                                    <div class="caption">
-                                        <p><?php echo $caption; ?></p>
-                                    </div>
-                            </a>
-                        </div>
+            <div class="container simulador-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="simulador-colors">
+                    <label><strong>Escolha uma cor:</strong></label><br>
+                    @foreach ($cores as $cor)
+                        <button class="btn-cor" data-hex="{{ $cor['hex'] }}" title="{{ $cor['nome'] }}" style="background: {{ $cor['hex'] }};"></button>
+                    @endforeach
                 </div>
-            <?php }*/ ?>
+
+                <div class="simulador-canvas-wrapper">
+                    <canvas id="canvas" width="1000" height="666" class="simulador-canvas"></canvas>
+                </div>
             </div>
-            </div>
+
+            <script>
+                $(document).ready(function() {
+                    var canvas = document.getElementById('canvas');
+                    var ctx = canvas.getContext('2d');
+                    var img = new Image();
+                    img.src = "{{ asset('img/ambiente.jpg') }}";
+                    img.onload = function() {
+                        var aspectRatio = img.width / img.height;
+                        canvas.height = canvas.width / aspectRatio;
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    };
+
+                    $('.btn-cor').on('click', function() {
+                        var cor = $(this).data('hex');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        var x = canvas.width * 0.15;
+                        var y = canvas.height * 0.25;
+                        var w = canvas.width * 0.7;
+                        var h = canvas.height * 0.4;
+                        ctx.fillStyle = cor + '88';
+                        ctx.fillRect(x, y, w, h);
+                    });
+                });
+            </script>
         </section>
 
-
-
-                -->
         <section id="contact" class="contact">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -331,11 +316,13 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                                     <h3 class="text-center">Bocayuva Tintas Planaltina</h3>
-                                    <br>
-                                    <p> <a href="https://maps.app.goo.gl/7hteyiKajCRLDaYG6?g_st=iw" target="_blank"><i class="bi bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
+                                    <br />
+                                    <p> <a href="https://maps.app.goo.gl/7hteyiKajCRLDaYG6?g_st=iw" target="_blank"><i class="bi
+                                            bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
 
-                                    <br>
-                                    <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 99942-8137</p></a>
+                                    <br />
+                                    <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png"
+                                                class="img-responsive" alt="" /> (61) 99942-8137</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -343,11 +330,13 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                                     <h3 class="text-center">Bocayuva Tintas Arapoanga</h3>
-                                    <br>
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoanga-DF</p></a>
+                                    <br />
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw"
+                                            target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoanga-DF</p></a>
 
-                                    <br>
-                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img src="/img/util/whatsapp.png" class="btn-wpp" alt="" /> (61) 99942-8138</p></a>
+                                    <br />
+                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img src="/img/util/whatsapp.png" class="btn-wpp"
+                                                alt="" /> (61) 99942-8138</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -355,11 +344,13 @@
                             <div class="col-md-4">
                                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                                     <h3 class="text-center">Bocayuva Tintas Formosa</h3>
-                                    <br>
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw" target="_blank"> <i class="bi bi-geo-alt"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha Formosa-GO</p></a>
+                                    <br />
+                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw"
+                                            target="_blank"> <i class="bi bi-geo-alt"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha Formosa-GO</p></a>
 
-                                    <br>
-                                    <p> <a href="https://wa.link/ixnqi6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png" class="img-responsive" alt="" /> (61) 3631-3355</p></a>
+                                    <br />
+                                    <p> <a href="https://wa.link/ixnqi6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png"
+                                                class="img-responsive" alt="" /> (61) 3631-3355</p></a>
                                 </div>
                             </div>
                             <!-- End Info Item -->
@@ -412,7 +403,8 @@
     <!-- End Footer -->
 
     <!-- Scroll Top Button -->
-    <a title="This is my tooltip" href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
+    <a title="This is my tooltip" href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img
+            src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
 
     <!-- Preloader -->
     <div id="preloader">
@@ -435,6 +427,43 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/reformas/script.js') }}" defer></script>
     <script src="{{ asset('js/index/index.js') }}" defer></script>
+
+    <!-- Initialize Marcas Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const marcasSwiper = new Swiper('.marcas-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    }
+                }
+            });
+        });
+    </script>
 
 
 </body>
