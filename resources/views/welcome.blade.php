@@ -137,7 +137,7 @@
         <section id="services" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>PINTOR PARCEIRO</h2>
+                <h2 class="titulo-pincel-verde">PINTOR PARCEIRO</h2>
                 <p>
                     Conheça o programa PINTOR PARCEIRO da Bocayuva Tintas
                 </p>
@@ -145,76 +145,89 @@
             <!-- End Section Title -->
 
             <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    O QUE É O PROGRAMA PINTOR PARCEIRO?
-                                </h4>
-                                <p class="description">
-                                    É o programa fidelidade em que o pintor cadastrado pode acumular pontos e trocá-los por descontos em produtos. Além disso, o pintor parceiro tem acesso a cursos gratuitos oferecidos pelos fornecedores parceiros da Bocayuva Tintas.
-                                </p>
+                <div class="row align-items-center">
+                    <!-- Imagem à esquerda -->
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <div class="pintor-parceiro-image">
+                            <img src="{{ asset('img/pintor.jpg') }}" class="img-fluid" alt="Pintor Parceiro">
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo à direita -->
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="pintor-parceiro-content">
+                            <div class="row gy-4">
+                                <div class="col-12">
+                                    <div class="service-item d-flex">
+                                        <div class="icon flex-shrink-0">
+                                            <div class="numero-destaque">1</div>
+                                        </div>
+                                        <div>
+                                            <h4 class="title">
+                                                O QUE É O PROGRAMA PINTOR PARCEIRO?
+                                            </h4>
+                                            <p class="description">
+                                                É o programa fidelidade em que o pintor cadastrado pode acumular pontos e trocá-los por descontos em produtos. Além disso, o pintor parceiro tem acesso a cursos gratuitos oferecidos pelos fornecedores parceiros da Bocayuva Tintas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Service Item -->
+
+                                <div class="col-12">
+                                    <div class="service-item d-flex">
+                                        <div class="icon flex-shrink-0">
+                                            <div class="numero-destaque">2</div>
+                                        </div>
+                                        <div>
+                                            <h4 class="title">
+                                                QUAIS SÃO AS REGRAS?
+                                            </h4>
+                                            <p class="description">
+                                                O pintor parceiro deve se cadastrar em pelo menos uma de nossas lojas. A cada compra efetuada que for indicada por ele, o pintor pode acumular pontos baseado em um percentual da compra. O resgate dos pontos só pode ser feito na loja em que o pintor é cadastrado, mas pode se cadastrar em mais de uma loja.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Service Item -->
+
+                                <div class="col-12">
+                                    <div class="service-item d-flex">
+                                        <div class="icon flex-shrink-0">
+                                            <div class="numero-destaque">3</div>
+                                        </div>
+                                        <div>
+                                            <h4 class="title">
+                                                COMO FAÇO PARA ME CADASTRAR?
+                                            </h4>
+                                            <p class="description">
+                                                É simples! Pode cadastrar pelo formulário no <a target="_blank" href="https://forms.gle/ni9N9R8DTFoaxbtb9" class="link-destaque">link</a> ou se dirigir a uma de nossas lojas e solicitar o cadastro aos nossos vendedores.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Service Item -->
+
+                                <div class="col-12">
+                                    <div class="service-item d-flex">
+                                        <div class="icon flex-shrink-0">
+                                            <div class="numero-destaque">4</div>
+                                        </div>
+                                        <div>
+                                            <h4 class="title">
+                                                E SE EU TIVER MAIS DÚVIDAS?
+                                            </h4>
+                                            <p class="description">
+                                                <a href="{{ asset('docs/regulamento.pdf')}}" download="regulamento.pdf" class="link-destaque">Consulte nosso regulamento</a>
+                                                ou <a href="#contact" class="link-destaque">entre em contato com a gente!</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Service Item -->
                             </div>
                         </div>
                     </div>
-                    <!-- End Service Item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    Quais são as regras?
-                                </h4>
-                                <p class="description">
-                                    O pintor parceiro deve se cadastrar em pelo menos uma de nossas lojas. A cada compra efetuada que for indicada por ele, o pintor pode acumular pontos baseado em um percentual da compra. O resgate dos pontos só pode ser feito na loja em que o pintor é cadastrado, mas pode se cadastrar em mais de uma loja.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    Como faço para me cadastrar?
-                                </h4>
-                                <p class="description">
-                                    É simples! Pode cadastrar pelo formulário no <a target="_blank" href="https://forms.gle/ni9N9R8DTFoaxbtb9">link</a> ou se dirigir a uma de nossas lojas e solicitar o cadastro aos nossos vendedores.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0">
-                                <i class="bi bi-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="title">
-                                    4. E se eu tiver mais dúvidas? </h4>
-                                <p class="description">
-                                    <a href="{{ asset('docs/regulamento.pdf')}}" download="regulamento.pdf">Consulte nosso regulamento</a>
-                                    ou <a href="#contact">entre em contato com a gente!</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
                 </div>
             </div>
         </section>
