@@ -72,7 +72,9 @@
     <main id="main">
         <!-- Hero Section - Dashboard Page -->
         <section id="hero">
-            <img class="img-fluid" src="{{URL('img/util/capa.png')}}" alt="" data-aos="fade-in" />
+            <a href="https://wa.link/cb4pu6" target="_blank">
+                <img class="img-fluid" src="{{URL('img/util/banner.png')}}" alt="" data-aos="fade-in" />
+            </a>
 
         </section>
         <!-- End Hero Section -->
