@@ -79,6 +79,58 @@
         </section>
         <!-- End Hero Section -->
 
+        <!-- Diferenciais Section -->
+        <section id="diferenciais" class="diferenciais-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Diferenciais Bocayuva Tintas</h2>
+                </div>
+                
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="diferencial-item text-center">
+                            <div class="diferencial-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <h4>Entrega rápida</h4>
+                            <p>Nosso compromisso em trazer a mercadoria dentro do prazo</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="diferencial-item text-center">
+                            <div class="diferencial-icon">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </div>
+                            <h4>Qualidade</h4>
+                            <p>Trabalhamos com as melhores marcas e produtos do mercado</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="diferencial-item text-center">
+                            <div class="diferencial-icon">
+                                <i class="bi bi-list-ul"></i>
+                            </div>
+                            <h4>Variedade</h4>
+                            <p>Variedade de produtos de pintura e revestimento para o seu projeto</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="diferencial-item text-center">
+                            <div class="diferencial-icon">
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <h4>Preços e Condições</h4>
+                            <p>Variedade de produtos de pintura e revestimento para o seu projeto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Diferenciais Section -->
+
         <!-- Serviços Section - Dashboard Page -->
         <section id="about" class="services">
             <!--  Section Title -->
@@ -313,84 +365,59 @@
             </script>
         </section>
 
-        <section id="contact" class="contact">
-            <!--  Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Entre em contato</h2>
-                <!-- <p>
-                    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-                    consectetur velit
-                </p> -->
-            </div>
-            <!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row gy-12">
-                    <div class="col-lg-12">
-                        <div class="row gy-4">
-                            <div class="col-md-4">
-                                <div class="info-item" data-aos="fade" data-aos-delay="200">
-                                    <h3 class="text-center">Bocayuva Tintas Planaltina</h3>
-                                    <br />
-                                    <p> <a href="https://maps.app.goo.gl/7hteyiKajCRLDaYG6?g_st=iw" target="_blank"><i class="bi
-                                            bi-geo-alt"></i> SOF CONJUNTO D, LOTE 26, SETOR NORTE PLANALTINA-DF</p></a>
-
-                                    <br />
-                                    <p> <a href="https://wa.link/cb4pu6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png"
-                                                class="img-responsive" alt="" /> (61) 99942-8137</p></a>
-                                </div>
-                            </div>
-                            <!-- End Info Item -->
-
-                            <div class="col-md-4">
-                                <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                    <h3 class="text-center">Bocayuva Tintas Arapoanga</h3>
-                                    <br />
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/4ie5SfJWRjGas9PV8?g_st=iw"
-                                            target="_blank"> <i class="bi bi-geo-alt"></i>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoanga-DF</p></a>
-
-                                    <br />
-                                    <p> <a href="https://wa.link/hs63sq" target="_blank"> <img src="/img/util/whatsapp.png" class="btn-wpp"
-                                                alt="" /> (61) 99942-8138</p></a>
-                                </div>
-                            </div>
-                            <!-- End Info Item -->
-
-                            <div class="col-md-4">
-                                <div class="info-item" data-aos="fade" data-aos-delay="400">
-                                    <h3 class="text-center">Bocayuva Tintas Formosa</h3>
-                                    <br />
-                                    <p class="text-uppercase"><a href="https://maps.app.goo.gl/G2cEVMAgr9Ak1Jox8?g_st=iw"
-                                            target="_blank"> <i class="bi bi-geo-alt"></i>Avenida Maestro João Luiz do Espírito Santo, N° 212, Bairro Formosinha Formosa-GO</p></a>
-
-                                    <br />
-                                    <p> <a href="https://wa.link/ixnqi6" target="_blank"> <img class="btn-wpp" src="/img/util/whatsapp.png"
-                                                class="img-responsive" alt="" /> (61) 3631-3355</p></a>
-                                </div>
-                            </div>
-                            <!-- End Info Item -->
-
-
-                            <!-- End Info Item -->
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
         <!-- End Contact Section -->
     </main>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer-bocayuva">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo à esquerda -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="{{ asset('img/logo.png') }}" alt="Bocayuva Tintas" class="img-fluid">
+                        <p class="footer-slogan">DE TODOS OS TIPOS DE TODAS AS CORES</p>
+                    </div>
+                </div>
+                
+                <!-- Informações de contato à direita -->
+                <div class="col-lg-8 col-md-6">
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <h4>Bocayuva Tintas Planaltina</h4>
+                            <p>SOF CONJUNTO D, LOTE 26, SETOR NORTE<br>PLANALTINA-DF</p>
+                            <div class="contact-phone">
+                                <img src="/img/util/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+                                <a href="https://wa.link/cb4pu6" target="_blank">(61) 99942-8137</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>Bocayuva Tintas Arapoanga</h4>
+                            <p>Quadra 07, Conjunto D, Lote 01, Loja 01 Arapoanga-DF</p>
+                            <div class="contact-phone">
+                                <img src="/img/util/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+                                <a href="https://wa.link/hs63sq" target="_blank">(61) 99942-8138</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>Bocayuva Tintas Formosa</h4>
+                            <p>Avenida Maestro João Luiz do Espírito Santo, N° 212,<br>Bairro Formosinha Formosa-GO</p>
+                            <div class="contact-phone">
+                                <img src="/img/util/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+                                <a href="https://wa.link/ixnqi6" target="_blank">(61) 3631-3355</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal existente mantido -->
         <div class="modal" id="startModal">
             <div class="modal-dialog">
                 <div class="modal-content">
-
-
-
-                    <!-- Modal body -->
                     <div class="modal-header">
                         <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
@@ -401,19 +428,16 @@
                             </a>
                         </p>
                     </div>
-
-                    <!-- Modal footer -->
-
-
                 </div>
             </div>
+        </div>
 
-            <div class="container copyright text-center mt-4">
-                <p>
-                    &copy; <span>Cópia não autorizada</span> <strong class="px-1">Bocayuva Tintas <?php echo date("Y"); ?> - <?php echo date('Y', strtotime("+2 years", strtotime(now()))); ?></strong>
-                    <span>Todos os direitos reservados</span>
-
-            </div>
+        <div class="container copyright text-center mt-4">
+            <p>
+                &copy; <span>Cópia não autorizada</span> <strong class="px-1">Bocayuva Tintas <?php echo date("Y"); ?> - <?php echo date('Y', strtotime("+2 years", strtotime(now()))); ?></strong>
+                <span>Todos os direitos reservados</span>
+            </p>
+        </div>
     </footer>
     <!-- End Footer -->
 
