@@ -18,11 +18,21 @@ class SlideController extends Controller
 
     public function store(StoreSlideRequest $request)
     {
-        $path = $request->file('image')->store('slides', 'public');
+        $uploadedFiles = 0;
+        
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
+                $path = $file->store('slides', 'public');
+                Slide::create(['image_path' => $path]);
+                $uploadedFiles++;
+            }
+        }
 
-        Slide::create(['image_path' => $path]);
+        $message = $uploadedFiles === 1 
+            ? 'Imagem adicionada com sucesso!' 
+            : "{$uploadedFiles} imagens adicionadas com sucesso!";
 
-        return redirect()->back()->with('success', 'Imagem adicionada com sucesso.');
+        return redirect()->route('admin.slides.index')->with('success', $message);
     }
 
     public function destroy(Slide $slide)
@@ -30,6 +40,6 @@ class SlideController extends Controller
         Storage::disk('public')->delete($slide->image_path);
         $slide->delete();
 
-        return redirect()->back()->with('success', 'Imagem removida com sucesso.');
+        return redirect()->route('admin.slides.index')->with('success', 'Slide removido com sucesso!');
     }
 }
