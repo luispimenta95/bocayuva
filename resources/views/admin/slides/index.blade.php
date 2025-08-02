@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Gerenciar Slides')
-
 @section('content')
 <div class="container py-4">
     <h2 class="mb-4 fw-bold text-center">Gerenciar Slides</h2>
