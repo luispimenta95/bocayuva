@@ -130,11 +130,7 @@
                             @csrf
                             @method('PUT')
                             <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="edit_title{{ $banner->id }}" class="form-label">Título</label>
-                                    <input type="text" name="title" id="edit_title{{ $banner->id }}" class="form-control" value="{{ $banner->title }}">
-                                </div>
-                                
+                    
                                 <div class="mb-3">
                                     <label for="edit_link_url{{ $banner->id }}" class="form-label">Link URL</label>
                                     <input type="url" name="link_url" id="edit_link_url{{ $banner->id }}" class="form-control" value="{{ $banner->link_url }}">
@@ -147,12 +143,7 @@
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="edit_order{{ $banner->id }}" class="form-label">Ordem</label>
-                                            <input type="number" name="order" id="edit_order{{ $banner->id }}" class="form-control" value="{{ $banner->order }}" min="0">
-                                        </div>
-                                    </div>
+                            
                                     <div class="col-6">
                                         <div class="form-check mt-4">
                                             <input type="checkbox" name="is_active" id="edit_is_active{{ $banner->id }}" class="form-check-input" {{ $banner->is_active ? 'checked' : '' }}>
