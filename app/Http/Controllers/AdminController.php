@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Post;
 use App\Models\Produto;
+use App\Models\Banner;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -39,12 +40,15 @@ class AdminController extends Controller
 
     // $posts = $this->apiInsta(); // se desejar ativar depois
 
-       $arquivos = Storage::disk('public')->files('slides');
+    $arquivos = Storage::disk('public')->files('slides');
 
     // Filtrar apenas imagens (opcional)
     $slides = array_filter($arquivos, function ($path) {
         return preg_match('/\.(jpe?g|png|gif|webp)$/i', $path);
     });
+
+    // Carregar banners ativos ordenados
+    $banners = Banner::active()->ordered()->get();
 
     $marcas = [
         
@@ -78,7 +82,7 @@ class AdminController extends Controller
             ['nome' => 'Cinza', 'hex' => '#808080'],
         ];
 
-    return view('welcome', compact('slides', 'marcas', 'cores'));
+    return view('welcome', compact('slides', 'banners', 'marcas', 'cores'));
 }
 
        public function dashboard()
@@ -89,11 +93,6 @@ class AdminController extends Controller
     public function slides()
     {
         return view('admin.slides.index');
-    }
-
-    public function banner()
-    {
-        return view('admin.banner.index');
     }
 
     

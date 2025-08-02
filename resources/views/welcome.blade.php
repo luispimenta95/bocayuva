@@ -60,6 +60,15 @@
                     <li><a href="#portfolio">Marcas parceiras</a></li>
                     <li><a href="#simulador">Simulador</a></li>
                     <li><a href="#contact">Contato</a></li>
+                    @auth
+                        <li><a href="{{ route('admin.dashboard') }}" style="color: #ffd700; font-weight: bold;">
+                            <i class="bi bi-gear"></i> Admin
+                        </a></li>
+                    @else
+                        <li><a href="{{ route('login') }}" style="color: #ccc; font-size: 0.9em;">
+                            <i class="bi bi-lock"></i> Login
+                        </a></li>
+                    @endauth
                 </ul>
 
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -72,10 +81,60 @@
     <main id="main">
         <!-- Hero Section - Dashboard Page -->
         <section id="hero">
-            <a href="https://wa.link/cb4pu6" target="_blank">
-                <img class="img-fluid" src="{{URL('img/util/banner.png')}}" alt="" data-aos="fade-in" />
-            </a>
-
+            @if($banners->count() > 0)
+                @if($banners->count() == 1)
+                    {{-- Banner único --}}
+                    @php $activeBanner = $banners->first(); @endphp
+                    @if($activeBanner->link_url)
+                        <a href="{{ $activeBanner->link_url }}" target="_blank">
+                            <img class="img-fluid auto-mode" src="{{ asset('storage/' . $activeBanner->image_path) }}" alt="{{ $activeBanner->title ?? 'Banner' }}" data-aos="fade-in" />
+                        </a>
+                    @else
+                        <img class="img-fluid auto-mode" src="{{ asset('storage/' . $activeBanner->image_path) }}" alt="{{ $activeBanner->title ?? 'Banner' }}" data-aos="fade-in" />
+                    @endif
+                @else
+                    {{-- Múltiplos banners com carousel --}}
+                    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            @foreach($banners as $index => $banner)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    @if($banner->link_url)
+                                        <a href="{{ $banner->link_url }}" target="_blank">
+                                            <img class="d-block w-100 img-fluid auto-mode" src="{{ asset('storage/' . $banner->image_path) }}" alt="{{ $banner->title ?? 'Banner' }}" data-aos="fade-in" />
+                                        </a>
+                                    @else
+                                        <img class="d-block w-100 img-fluid auto-mode" src="{{ asset('storage/' . $banner->image_path) }}" alt="{{ $banner->title ?? 'Banner' }}" data-aos="fade-in" />
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                        
+                        @if($banners->count() > 1)
+                            <!-- Indicadores do carousel -->
+                            <div class="carousel-indicators">
+                                @foreach($banners as $index => $banner)
+                                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}" aria-label="Banner {{ $index + 1 }}"></button>
+                                @endforeach
+                            </div>
+                            
+                            <!-- Controles do carousel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </button>
+                        @endif
+                    </div>
+                @endif
+            @else
+                {{-- Fallback para o banner padrão caso não haja banners cadastrados --}}
+                <a href="https://wa.link/cb4pu6" target="_blank">
+                    <img class="img-fluid" src="{{URL('img/util/banner.png')}}" alt="Banner Padrão" data-aos="fade-in" />
+                </a>
+            @endif
         </section>
         <!-- End Hero Section -->
 
