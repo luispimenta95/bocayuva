@@ -66,6 +66,8 @@
     </div>
 
     {{-- Listagem dos Banners Existentes --}}
+        <h2 class="mb-4 fw-bold text-center">Banners Existentes</h2>
+
     <div class="row g-4">
         @forelse ($banners as $banner)
             <div class="col-12 col-md-6 col-lg-4">
