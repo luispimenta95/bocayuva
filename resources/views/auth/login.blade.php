@@ -285,11 +285,13 @@
         @endif
 
         @if($errors->any())
-            Toast.fire({
-                icon: 'error',
-                title: 'Erro no Login',
-                text: 'Verifique suas credenciais e tente novamente.'
-            });
+            @foreach($errors->all() as $error)
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Erro no Login',
+                    text: '{!! addslashes($error) !!}'
+                });
+            @endforeach
         @endif
     </script>
 </body>
