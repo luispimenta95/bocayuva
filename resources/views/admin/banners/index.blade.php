@@ -91,7 +91,7 @@
                           
                             @if($banner->link_url)
                                 <small class="text-primary">
-                                    <i class="bi bi-link-45deg"></i> Com link
+                                    <i class="bi bi-link-45deg"></i> <a href="{{ $banner->link_url }}" target="_blank">{{ $banner->link_url }} Link</a>
                                 </small>
                             @endif
                         </div>
@@ -194,36 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.getAttribute('content');
     }
     
-    if (form && fileInput) {
-        form.addEventListener('submit', function(e) {
-            const file = fileInput.files[0];
-            
-            if (!file) {
-                alert('Por favor, selecione uma imagem.');
-                e.preventDefault();
-                return false;
-            }
-            
-            // Verificar tamanho (2MB = 2048KB = 2097152 bytes)
-            if (file.size > 2097152) {
-                alert('A imagem é muito grande. Tamanho máximo: 2MB');
-                e.preventDefault();
-                return false;
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[action*="banners"]');
-    const fileInput = document.getElementById('image');
-    
-    // Configurar CSRF token para AJAX
-    const csrfToken = document.querySelector('meta[name="csrf-token"]');
-    if (csrfToken) {
-        window.axios = window.axios || {};
-        window.axios.defaults = window.axios.defaults || {};
-        window.axios.defaults.headers = window.axios.defaults.headers || {};
-        window.axios.defaults.headers.common = window.axios.defaults.headers.common || {};
-        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.getAttribute('content');
-    }
-    
     // Validação do formulário com SweetAlert2
     if (form && fileInput) {
         form.addEventListener('submit', function(e) {
@@ -266,15 +236,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configurar botões de deletar
     const deleteBtns = document.querySelectorAll('.delete-btn');
+    console.log('Botões de deletar encontrados:', deleteBtns.length);
+    
     deleteBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Botão de deletar clicado');
+            
             const form = this.closest('.delete-form');
+            console.log('Formulário encontrado:', form);
+            
             const bannerTitle = form.dataset.bannerTitle;
+            console.log('Título do banner:', bannerTitle);
+            
+            // Verificar se as funções do SweetAlert2 existem
+            if (typeof confirmAction === 'undefined') {
+                console.error('Função confirmAction não encontrada');
+                alert('Função confirmAction não encontrada. Verifique se o SweetAlert2 está carregado.');
+                return;
+            }
             
             confirmAction(
                 `Você está prestes a deletar "${bannerTitle}". Esta ação não pode ser desfeita.`,
                 function() {
+                    console.log('Confirmação aceita, enviando formulário');
                     form.submit();
                 },
                 'Deletar Banner?'

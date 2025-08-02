@@ -37,8 +37,8 @@ class BannerController extends Controller
                     'order' => $request->order ?? 0
                 ]);
 
-                return redirect()->route('admin.banners.index')
-                               ->with('success', 'Banner criado com sucesso!');
+        return redirect()->route('admin.banners.index')
+                       ->with('success', 'Banner criado com sucesso!');
             }
 
             return redirect()->back()->with('error', 'Erro: Nenhuma imagem foi enviada.');
