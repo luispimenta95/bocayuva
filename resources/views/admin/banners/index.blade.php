@@ -6,32 +6,7 @@
 <div class="container py-4">
     <h2 class="mb-4 fw-bold text-center">Gerenciar Banners</h2>
 
-    {{-- Mensagens de feedback --}}
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-    @if(session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-    {{-- Erros de validação --}}
-    @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <ul class="mb-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+    {{-- Mensagens serão exibidas via SweetAlert2 automaticamente --}}
 
     {{-- Meta tag para CSRF token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -140,10 +115,10 @@
                             
                             {{-- Botão para deletar --}}
                             <form method="POST" action="{{ route('admin.banners.destroy', $banner) }}" 
-                                  onsubmit="return confirm('Tem certeza que deseja deletar este banner?')">
+                                  class="delete-form" data-banner-title="{{ $banner->title ?? 'este banner' }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <button type="button" class="btn btn-outline-danger btn-sm delete-btn">
                                     <i class="bi bi-trash"></i> Deletar
                                 </button>
                             </form>
@@ -243,13 +218,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('A imagem é muito grande. Tamanho máximo: 2MB');
                 e.preventDefault();
                 return false;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action*="banners"]');
+    const fileInput = document.getElementById('image');
+    
+    // Configurar CSRF token para AJAX
+    const csrfToken = document.querySelector('meta[name="csrf-token"]');
+    if (csrfToken) {
+        window.axios = window.axios || {};
+        window.axios.defaults = window.axios.defaults || {};
+        window.axios.defaults.headers = window.axios.defaults.headers || {};
+        window.axios.defaults.headers.common = window.axios.defaults.headers.common || {};
+        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.getAttribute('content');
+    }
+    
+    // Validação do formulário com SweetAlert2
+    if (form && fileInput) {
+        form.addEventListener('submit', function(e) {
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                e.preventDefault();
+                showError('Por favor, selecione uma imagem para o banner.', 'Imagem obrigatória');
+                return false;
+            }
+            
+            // Verificar tamanho (2MB = 2048KB = 2097152 bytes)
+            if (file.size > 2097152) {
+                e.preventDefault();
+                showError('A imagem deve ter no máximo 2MB. Arquivo atual: ' + 
+                         Math.round(file.size / 1024 / 1024 * 100) / 100 + 'MB', 
+                         'Arquivo muito grande');
+                return false;
             }
             
             // Verificar tipo
             const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
             if (!allowedTypes.includes(file.type)) {
-                alert('Tipo de arquivo não permitido. Use: JPEG, PNG, GIF ou WebP');
                 e.preventDefault();
+                showError('Formato não suportado. Use apenas: JPG, PNG, GIF ou WebP', 
+                         'Formato inválido');
                 return false;
             }
             
@@ -259,13 +268,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 csrfInput.value = csrfToken.getAttribute('content');
             }
             
-            console.log('Enviando arquivo:', file.name, 'Tamanho:', file.size, 'Tipo:', file.type);
-            
             // Mostrar loading
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="bi bi-spinner bi-spin"></i> Enviando...';
+            showLoading();
+        });
+    }
+    
+    // Configurar botões de deletar
+    const deleteBtns = document.querySelectorAll('.delete-btn');
+    deleteBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const form = this.closest('.delete-form');
+            const bannerTitle = form.dataset.bannerTitle;
+            
+            confirmAction(
+                `Você está prestes a deletar "${bannerTitle}". Esta ação não pode ser desfeita.`,
+                function() {
+                    form.submit();
+                },
+                'Deletar Banner?'
+            );
+        });
+    });
+    
+    // Função para mostrar loading durante upload
+    function showLoading() {
+        Swal.fire({
+            title: 'Enviando...',
+            text: 'Fazendo upload da imagem, aguarde.',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                Swal.showLoading();
             }
         });
     }

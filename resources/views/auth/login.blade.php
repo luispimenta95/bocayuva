@@ -9,6 +9,9 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+    
     <style>
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -151,26 +154,7 @@
                 <p class="text-muted mb-0">Bocayuva Tintas</p>
             </div>
 
-            <!-- Mensagens de Status -->
-            @if (session('status'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="bi bi-check-circle me-2"></i>
-                    {{ session('status') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
-
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="bi bi-exclamation-triangle me-2"></i>
-                    @if($errors->has('email') || $errors->has('password'))
-                        Credenciais inválidas. Verifique email e senha.
-                    @else
-                        Erro no login. Tente novamente.
-                    @endif
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
+            <!-- Mensagens serão exibidas via SweetAlert2 automaticamente -->
 
             <!-- Formulário de Login -->
             <form method="POST" action="{{ route('login') }}" id="loginForm">
@@ -275,7 +259,38 @@
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Script para login com SweetAlert2 -->
+    <script>
+        // Configurar Toast para login
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true
+        });
+
+        // Mostrar alerts do Laravel
+        @if(session('status'))
+            Toast.fire({
+                icon: 'success',
+                title: '{{ session('status') }}'
+            });
+        @endif
+
+        @if($errors->any())
+            Toast.fire({
+                icon: 'error',
+                title: 'Erro no Login',
+                text: 'Verifique suas credenciais e tente novamente.'
+            });
+        @endif
+    </script>
 </body>
 </html>

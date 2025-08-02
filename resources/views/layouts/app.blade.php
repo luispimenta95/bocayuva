@@ -7,6 +7,9 @@
 
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
 
     <!-- Seu CSS customizado, se tiver -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
@@ -89,6 +92,96 @@
 
     <!-- Bootstrap 5 JS Bundle CDN (popper + bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    
+    <!-- Script para SweetAlert2 -->
+    <script>
+        // Configurar SweetAlert2 com tema personalizado
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        // Função para mostrar alerts de sucesso
+        window.showSuccess = function(message, title = 'Sucesso!') {
+            Toast.fire({
+                icon: 'success',
+                title: title,
+                text: message
+            });
+        };
+
+        // Função para mostrar alerts de erro
+        window.showError = function(message, title = 'Erro!') {
+            Toast.fire({
+                icon: 'error',
+                title: title,
+                text: message
+            });
+        };
+
+        // Função para mostrar alerts de aviso
+        window.showWarning = function(message, title = 'Atenção!') {
+            Toast.fire({
+                icon: 'warning',
+                title: title,
+                text: message
+            });
+        };
+
+        // Função para confirmação de ações
+        window.confirmAction = function(message, onConfirm, title = 'Tem certeza?') {
+            Swal.fire({
+                title: title,
+                text: message,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sim, confirmar!',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed && typeof onConfirm === 'function') {
+                    onConfirm();
+                }
+            });
+        };
+
+        // Exibir alerts do Laravel automaticamente
+        @if(session('success'))
+            showSuccess('{{ session('success') }}');
+        @endif
+
+        @if(session('error'))
+            showError('{{ session('error') }}');
+        @endif
+
+        @if(session('warning'))
+            showWarning('{{ session('warning') }}');
+        @endif
+
+        @if(session('status'))
+            showSuccess('{{ session('status') }}');
+        @endif
+
+        @if($errors->any())
+            @php
+                $errorMessages = $errors->all();
+                $errorText = count($errorMessages) > 1 ? implode('\\n', $errorMessages) : $errorMessages[0];
+            @endphp
+            showError('{{ addslashes($errorText) }}');
+        @endif
+    </script>
 
     {{-- Seu JS customizado --}}
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
