@@ -88,7 +88,7 @@
                         @endif
                         
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <small class="text-muted">Ordem: {{ $banner->order }}</small>
+                          
                             @if($banner->link_url)
                                 <small class="text-primary">
                                     <i class="bi bi-link-45deg"></i> Com link
