@@ -20,12 +20,7 @@
             <form method="POST" action="{{ route('admin.banners.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Título (opcional)</label>
-                            <input type="text" name="title" id="title" class="form-control" placeholder="Título do banner">
-                        </div>
-                    </div>
+               
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="link_url" class="form-label">Link URL (opcional)</label>
@@ -48,12 +43,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="mb-3">
-                            <label for="order" class="form-label">Ordem</label>
-                            <input type="number" name="order" id="order" class="form-control" value="0" min="0">
-                        </div>
-                    </div>
+                    <input type="hidden" name="order" id="order" value="0">
+                        
                     <div class="col-md-3">
                         <div class="mb-3">
                             <div class="form-check mt-4">
