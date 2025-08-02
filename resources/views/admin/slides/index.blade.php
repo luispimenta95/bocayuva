@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const slideId = form.dataset.slideId;
             
             confirmAction(
-                `Você está prestes a remover o slide #${slideId}. Esta ação não pode ser desfeita.`,
+                `Confirmar exclusão? Esta ação não pode ser desfeita.`,
                 function() {
                     form.submit();
                 },
