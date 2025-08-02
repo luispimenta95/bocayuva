@@ -29,7 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // Redirecionar para o dashboard administrativo após login
+        return redirect()->intended(route('admin.dashboard'));
     }
 
     /**
@@ -43,6 +44,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('login')->with('status', 'Logout realizado com sucesso!');
     }
 }
