@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             confirmAction(
-                `Você está prestes a deletar "${bannerTitle}". Esta ação não pode ser desfeita.`,
+                `Confirmar exclusão do banner? Esta ação não pode ser desfeita.`,
                 function() {
                     console.log('Confirmação aceita, enviando formulário');
                     form.submit();
