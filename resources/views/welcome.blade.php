@@ -498,7 +498,7 @@
     <!-- End Footer -->
 
     <!-- Scroll Top Button -->
-    <a title="This is my tooltip" href="#contact" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img
+    <a  href="https://wa.link/cb4pu6" class="scroll-top d-flex align-items-center justify-content-center btn-whatsapp"> <img
             src="/img/util/whatsapp.png" class="img-fluid" alt="" /></a>
 
     <!-- Preloader -->
