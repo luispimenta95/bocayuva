@@ -224,7 +224,7 @@
         <section id="about" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2 class="titulo-pincel-verde">Quem somos</h2>
+                <h2>Quem somos</h2>
                 <p>
                     Conheça um pouco da nossa história
                 </p>
@@ -278,7 +278,7 @@
         <section id="services" class="services">
             <!--  Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2 class="titulo-pincel-verde">PINTOR PARCEIRO</h2>
+                <h2>PINTOR PARCEIRO</h2>
                 <p>
                     Conheça o programa PINTOR PARCEIRO da Bocayuva Tintas
                 </p>
