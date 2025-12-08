@@ -188,6 +188,36 @@
                 </div>
             </div>
         </section>
+
+          <section id="portfolio" class="portfolio">
+            <!--  Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Marcas parceiras</h2>
+                <p>Conheça nossas marcas parceiras</p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper marcas-swiper">
+                    <div class="swiper-wrapper">
+                        @foreach($marcas as $key => $marca)
+                            <div class="swiper-slide">
+                                <div class="marca-item text-center">
+                                    <a href="{{ $marca['link'] }}" target="_blank">
+                                        <img src="{{ $marca['img'] }}" class="img-fluid marca-logo" alt="Logo {{ $key }}" />
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
         <!-- End Diferenciais Section -->
 
         <!-- Serviços Section - Dashboard Page -->
@@ -255,17 +285,10 @@
             </div>
             <!-- End Section Title -->
 
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Imagem à esquerda -->
-                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <div class="pintor-parceiro-image">
-                            <img src="{{ asset('img/pintor.jpg') }}" class="img-fluid" alt="Pintor Parceiro">
-                        </div>
-                    </div>
+   
                     
                     <!-- Conteúdo à direita -->
-                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="col-lg-12" data-aos="fade-left" data-aos-delay="200">
                         <div class="pintor-parceiro-content">
                             <div class="row gy-4">
                                 <div class="col-12">
@@ -347,35 +370,7 @@
         <!-- End Features Section -->
 
         <!-- Portfolio Section - Dashboard Page -->
-        <section id="portfolio" class="portfolio">
-            <!--  Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Marcas parceiras</h2>
-                <p>Conheça nossas marcas parceiras</p>
-            </div>
-            <!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper marcas-swiper">
-                    <div class="swiper-wrapper">
-                        @foreach($marcas as $key => $marca)
-                            <div class="swiper-slide">
-                                <div class="marca-item text-center">
-                                    <a href="{{ $marca['link'] }}" target="_blank">
-                                        <img src="{{ $marca['img'] }}" class="img-fluid marca-logo" alt="Logo {{ $key }}" />
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </section>
+      
         <!-- End Portfolio Section -->
 
         <!-- Simulador de Cores Section -->
