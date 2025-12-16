@@ -46,6 +46,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+    /* Padronização dos cards de produtos no carrossel */
+    .produtos-swiper { padding: 10px 0; }
+    .produtos-swiper .swiper-slide { height: auto; }
+    .produto-card { height: 100%; border: 1px solid #e9ecef; }
+    .produto-card .card-img-top {
+        height: 240px; /* altura fixa para alinhar */
+        object-fit: contain; /* mantém proporção sem cortar */
+        background: #fff; /* fundo neutro para imagens com transparência */
+        padding: 10px;
+    }
+    .produto-card .card-body { min-height: 64px; display: flex; align-items: center; justify-content: center; }
+    .produto-card .card-title { font-size: 0.95rem; line-height: 1.3; }
+    /* Ajuste das setas para ficarem alinhadas verticalmente ao conteúdo */
+    .produtos-button-next, .produtos-button-prev { color: #333; }
+    .produtos-button-next::after, .produtos-button-prev::after { font-size: 18px; }
+</style>
 
 <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
     <!-- ======= Header ======= -->

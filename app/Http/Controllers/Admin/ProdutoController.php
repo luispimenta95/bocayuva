@@ -20,6 +20,7 @@ class ProdutoController extends Controller
     {
         $validated = $request->validate([
             'nome' => 'required|string|max:255|unique:produtos,nome_produto',
+            'valor' => 'required|numeric|min:0',
             'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
 
@@ -31,7 +32,7 @@ class ProdutoController extends Controller
             'promocao' => $request->boolean('promocao'),
             'em_estoque' => $request->has('em_estoque') ? $request->boolean('em_estoque') : true,
             'descricao' => '',
-            'valor' => 0,
+            'valor' => $validated['valor'],
             'status' => 1,
             'ultima_atualizacao' => now(),
             'motivo_atualizacao' => 'Criado via painel',
@@ -46,11 +47,13 @@ class ProdutoController extends Controller
     {
         $validated = $request->validate([
             'nome' => 'required|string|max:255|unique:produtos,nome_produto,' . $produto->id,
+            'valor' => 'required|numeric|min:0',
             'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
 
         $data = [
             'nome_produto' => $validated['nome'],
+            'valor' => $validated['valor'],
             'promocao' => $request->boolean('promocao'),
             'em_estoque' => $request->boolean('em_estoque'),
             'ultima_atualizacao' => now(),

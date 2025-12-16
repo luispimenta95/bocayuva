@@ -39,6 +39,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Imagem</th>
+                    <th>Preço</th>
                     <th>Promoção</th>
                     <th>Estoque</th>
                     <th class="text-end">Ações</th>
@@ -50,6 +51,9 @@
                         <td class="fw-semibold">{{ $produto->nome_produto }}</td>
                         <td>
                             <img src="{{ asset('storage/' . $produto->imagem_produto) }}" alt="{{ $produto->nome_produto }}" class="img-thumbnail" style="max-width: 120px;">
+                        </td>
+                        <td>
+                            R$ {{ number_format($produto->valor, 2, ',', '.') }}
                         </td>
                         <td>
                             <span class="badge {{ $produto->promocao ? 'bg-warning text-dark' : 'bg-secondary' }}">
@@ -91,6 +95,10 @@
                                         <div class="mb-3">
                                             <label for="nome-{{ $produto->id }}" class="form-label">Nome</label>
                                             <input type="text" name="nome" id="nome-{{ $produto->id }}" value="{{ $produto->nome_produto }}" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="valor-{{ $produto->id }}" class="form-label">Preço</label>
+                                            <input type="number" step="0.01" min="0" name="valor" id="valor-{{ $produto->id }}" value="{{ $produto->valor }}" class="form-control" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="imagem-{{ $produto->id }}" class="form-label">Substituir imagem</label>
@@ -137,6 +145,10 @@
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" name="nome" id="nome" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Preço</label>
+                        <input type="number" step="0.01" min="0" name="valor" id="valor" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="imagem" class="form-label">Imagem</label>
