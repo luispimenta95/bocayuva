@@ -58,7 +58,7 @@
         padding: 10px;
     }
     .produto-card .card-body { min-height: 64px; display: flex; align-items: center; justify-content: center; }
-    .produto-card .card-title { font-size: 0.95rem; line-height: 1.3; }
+  .produto-card .card-title { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
     /* Ajuste das setas para ficarem alinhadas verticalmente ao conteúdo */
     .produtos-button-next, .produtos-button-prev { color: #333; }
     .produtos-button-next::after, .produtos-button-prev::after { font-size: 18px; }
