@@ -141,7 +141,7 @@
                     <div class="mb-3">
                         <label for="imagem" class="form-label">Imagem</label>
                         <input type="file" name="imagem" id="imagem" class="form-control" required accept="image/*">
-                        <div class="form-text">Formatos permitidos: jpeg, jpg, png, gif, webp. Máx: 2MB.</div>
+                        <div class="form-text">Formatos permitidos: jpeg, jpg, png, gif, webp. Máx: 4MB.</div>
                     </div>
                     <div class="form-check form-switch mb-2">
                         <input class="form-check-input" type="checkbox" role="switch" id="promocao" name="promocao">
