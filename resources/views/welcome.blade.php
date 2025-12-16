@@ -606,7 +606,7 @@
                 new Swiper('.produtos-swiper', {
                     slidesPerView: 1,
                     spaceBetween: 24,
-                    loop: true,
+                    loop: false,
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
