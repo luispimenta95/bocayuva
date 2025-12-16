@@ -97,8 +97,8 @@
                                             <input type="text" name="nome" id="nome-{{ $produto->id }}" value="{{ $produto->nome_produto }}" class="form-control" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="valor-{{ $produto->id }}" class="form-label">Preço</label>
-                                            <input type="number" step="0.01" min="0" name="valor" id="valor-{{ $produto->id }}" value="{{ $produto->valor }}" class="form-control" required>
+                                            <label for="valor-{{ $produto->id }}" class="form-label">Preço (opcional)</label>
+                                            <input type="number" step="0.01" min="0" name="valor" id="valor-{{ $produto->id }}" value="{{ $produto->valor }}" class="form-control" placeholder="0.00">
                                         </div>
                                         <div class="mb-3">
                                             <label for="imagem-{{ $produto->id }}" class="form-label">Substituir imagem</label>
@@ -147,8 +147,8 @@
                         <input type="text" name="nome" id="nome" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="valor" class="form-label">Preço</label>
-                        <input type="number" step="0.01" min="0" name="valor" id="valor" class="form-control" required>
+                        <label for="valor" class="form-label">Preço (opcional)</label>
+                        <input type="number" step="0.01" min="0" name="valor" id="valor" class="form-control" placeholder="0.00">
                     </div>
                     <div class="mb-3">
                         <label for="imagem" class="form-label">Imagem</label>

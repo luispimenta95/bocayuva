@@ -260,8 +260,7 @@
                                             @endif
                                         </div>
                                         <div class="card-body text-center">
-                                            <h5 class="card-title mb-1">{{ $produto->nome_produto }}</h5>
-                                            <div class="text-primary fw-semibold">R$ {{ number_format($produto->valor, 2, ',', '.') }}</div>
+                                            <h5 class="card-title mb-0">{{ $produto->nome_produto }}</h5>
                                         </div>
                                     </div>
                                 </div>
