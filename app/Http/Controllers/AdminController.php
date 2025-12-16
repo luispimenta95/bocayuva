@@ -82,7 +82,12 @@ class AdminController extends Controller
             ['nome' => 'Cinza', 'hex' => '#808080'],
         ];
 
-    return view('welcome', compact('slides', 'banners', 'marcas', 'cores'));
+    $produtos = Produto::where('em_estoque', true)
+        ->orderByDesc('promocao')
+        ->orderBy('nome_produto')
+        ->get();
+
+    return view('welcome', compact('slides', 'banners', 'marcas', 'cores', 'produtos'));
 }
 
        public function dashboard()

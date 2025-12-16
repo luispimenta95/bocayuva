@@ -7,8 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    //adicionar campo descrição
-    protected $fillable = ['nome_produto', 'descricao', 'valor', 'imagem_produto', 'status', 'promocao', 'ultima_atualizacao', 'motivo_atualizacao', 'responsavel_atualizacao'];
+    use HasFactory;
+
+    protected $fillable = [
+        'nome_produto',
+        'imagem_produto',
+        'promocao',
+        'em_estoque',
+        'descricao',
+        'valor',
+        'status',
+        'ultima_atualizacao',
+        'motivo_atualizacao',
+        'responsavel_atualizacao',
+    ];
+
+    protected $casts = [
+        'promocao' => 'boolean',
+        'em_estoque' => 'boolean',
+        'status' => 'boolean',
+    ];
+
     public $timestamps = false;
 
     public function categorias()

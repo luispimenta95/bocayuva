@@ -58,6 +58,7 @@
                     <li><a href="#about">Quem somos</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#portfolio">Marcas parceiras</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
                     <li><a href="#simulador">Simulador</a></li>
                     <li><a href="#contact">Contato</a></li>
                     @auth
@@ -218,6 +219,48 @@
                 </div>
             </div>
         </section>
+        
+        <section id="produtos" class="produtos">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Produtos</h2>
+                <p>Confira alguns produtos disponíveis em nossas lojas</p>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                @if(isset($produtos) && $produtos->count())
+                    <div class="swiper produtos-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($produtos as $produto)
+                                <div class="swiper-slide">
+                                    <div class="card h-100 shadow-sm produto-card">
+                                        <div class="position-relative">
+                                            <img src="{{ asset('storage/' . $produto->imagem_produto) }}" class="card-img-top" alt="{{ $produto->nome_produto }}">
+                                            @if($produto->promocao)
+                                                <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">Promoção</span>
+                                            @endif
+                                            @if(!$produto->em_estoque)
+                                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Esgotado</span>
+                                            @endif
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title mb-0">{{ $produto->nome_produto }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination produtos-pagination"></div>
+                        <div class="swiper-button-next produtos-button-next"></div>
+                        <div class="swiper-button-prev produtos-button-prev"></div>
+                    </div>
+                @else
+                    <div class="alert alert-info text-center" role="alert">
+                        Nenhum produto cadastrado no momento.
+                    </div>
+                @endif
+            </div>
+        </section>
+        
         <!-- End Diferenciais Section -->
 
         <!-- Serviços Section - Dashboard Page -->
@@ -557,6 +600,41 @@
                     }
                 }
             });
+
+            const produtosSwiperEl = document.querySelector('.produtos-swiper');
+            if (produtosSwiperEl) {
+                new Swiper('.produtos-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                    loop: true,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.produtos-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.produtos-button-next',
+                        prevEl: '.produtos-button-prev',
+                    },
+                    breakpoints: {
+                        576: {
+                            slidesPerView: 2,
+                            spaceBetween: 16,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1200: {
+                            slidesPerView: 4,
+                            spaceBetween: 24,
+                        }
+                    }
+                });
+            }
         });
     </script>
 

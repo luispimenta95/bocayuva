@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ProdutoController as AdminProdutoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,12 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::post('/banners', [BannerController::class, 'store'])->name('banners.store');
     Route::put('/banners/{banner}', [BannerController::class, 'update'])->name('banners.update');
     Route::delete('/banners/{banner}', [BannerController::class, 'destroy'])->name('banners.destroy');
+
+    // Rotas para produtos
+    Route::get('/produtos', [AdminProdutoController::class, 'index'])->name('produtos.index');
+    Route::post('/produtos', [AdminProdutoController::class, 'store'])->name('produtos.store');
+    Route::put('/produtos/{produto}', [AdminProdutoController::class, 'update'])->name('produtos.update');
+    Route::delete('/produtos/{produto}', [AdminProdutoController::class, 'destroy'])->name('produtos.destroy');
 });
 
 require __DIR__.'/auth.php';
