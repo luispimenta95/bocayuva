@@ -21,8 +21,6 @@ class ProdutoController extends Controller
         $validated = $request->validate([
             'nome' => 'required|string|max:255|unique:produtos,nome_produto',
             'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'promocao' => 'nullable|boolean',
-            'em_estoque' => 'nullable|boolean',
         ]);
 
         $imagePath = $request->file('imagem')->store('produtos', 'public');
@@ -49,8 +47,6 @@ class ProdutoController extends Controller
         $validated = $request->validate([
             'nome' => 'required|string|max:255|unique:produtos,nome_produto,' . $produto->id,
             'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'promocao' => 'nullable|boolean',
-            'em_estoque' => 'nullable|boolean',
         ]);
 
         $data = [
