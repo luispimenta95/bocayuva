@@ -49,6 +49,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- Gerenciar Produtos -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border-success shadow-sm h-100">
+                <div class="card-header bg-success text-white fw-semibold">
+                    Produtos em Destaque
+                </div>
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <a href="{{ route('admin.produtos.index') }}" class="btn btn-success btn-lg w-100">
+                        Gerenciar Produtos
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
