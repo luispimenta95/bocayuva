@@ -603,10 +603,11 @@
 
             const produtosSwiperEl = document.querySelector('.produtos-swiper');
             if (produtosSwiperEl) {
+                const totalSlides = produtosSwiperEl.querySelectorAll('.swiper-slide').length;
                 new Swiper('.produtos-swiper', {
                     slidesPerView: 1,
                     spaceBetween: 24,
-                    loop: false,
+                    loop: totalSlides > 4,
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
@@ -619,6 +620,7 @@
                         nextEl: '.produtos-button-next',
                         prevEl: '.produtos-button-prev',
                     },
+                    watchOverflow: true,
                     breakpoints: {
                         576: {
                             slidesPerView: 2,
